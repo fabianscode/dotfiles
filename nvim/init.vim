@@ -8,7 +8,14 @@ set shiftwidth=4
 set autoindent
 
 " general settings
-set relativenumber 
+set number
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 set cc=110
 set clipboard=unnamedplus
 set ttyfast
@@ -55,6 +62,7 @@ call plug#begin()
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
     Plug 'kdheepak/lazygit.nvim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -77,6 +85,9 @@ inoremap jj <Esc>
 
 nmap <C-l> o<Esc>
 
+" complete parentheses
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
 
 " }}}
 
@@ -84,12 +95,11 @@ nmap <C-l> o<Esc>
 " VIMSCRIPT -------------------------------------------------------------- {{{
 
 " Code folding
+"
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
-
-
 
 " }}}
 
