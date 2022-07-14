@@ -1,14 +1,6 @@
-## Configuration for Alacritty, the GPU enhanced terminal emulator.
-## Created by Aditya Shakya (@adi1090x)
-
-## It's a very basic and simple config file, for full configuration...
-## See, /usr/share/doc/alacritty/example/alacritty.yml
-
-## Import files (Colors, Fonts, Etc)
 import:
   - ~/.config/alacritty/colors.yml
 
-## Set environment variables
 env:
   TERM: xterm-256color
 
@@ -27,11 +19,9 @@ window:
   startup_mode: Windowed
   dynamic_title: true
 
-## scrolling
   history: 10000
   multiplier: 3
 
-## Cursor
 cursor:
   style:
     shape: Block
@@ -39,5 +29,4 @@ cursor:
 
   unfocused_hollow: false
 
-## Live config reload
 live_config_reload: true

@@ -17,6 +17,7 @@ augroup numbertoggle
 augroup END
 
 set cc=110
+highlight ColorColumn ctermbg=6
 set clipboard=unnamedplus
 set ttyfast
 set showmatch 
