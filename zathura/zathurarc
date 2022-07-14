@@ -1,13 +1,13 @@
-set adjust-open "best-fit"
-set pages-per-row 1
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
 
-set scroll-page-aware "true"
-set smooth-scroll "true"
-set scroll-full-overlap 0.01
-set scroll-step 100
+unmap H
+unmap L
+map H scroll up
+map L scoll down
 
-set render-loading "false"
-set scroll-step 50
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
+map K zoom in
+map J zoom out
+
+map p print
