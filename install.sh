@@ -6,11 +6,13 @@ if [ "$CONT" = "y" ]; then
     rm -r ~/.config/alacritty;
     rm -r ~/.config/waybar;
     rm -r ~/.config/nvim;
+    rm -r ~/.config/zathura;
 
     ln -s ${PWD}/sway ~/.config/sway;
     ln -s ${PWD}/alacritty ~/.config/alacritty;
     ln -s ${PWD}/waybar ~/.config/waybar;
     ln -s ${PWD}/nvim ~/.config/nvim;
+    ln -s ${PWD}/zathura ~/.config/zathura;
 
     echo "Existing files deleted.";
 else
