@@ -7,12 +7,20 @@ if [ "$CONT" = "y" ]; then
     rm -r ~/.config/waybar;
     rm -r ~/.config/nvim;
     rm -r ~/.config/zathura;
+    rm -r ~/.config/i3;
+    rm -r ~/.config/polybar;
+    rm -r ~/.config/gtk-3.0;
+    rm -r ~/.config/rofi;
 
     ln -s ${PWD}/sway ~/.config/sway;
     ln -s ${PWD}/alacritty ~/.config/alacritty;
     ln -s ${PWD}/waybar ~/.config/waybar;
     ln -s ${PWD}/nvim ~/.config/nvim;
     ln -s ${PWD}/zathura ~/.config/zathura;
+    ln -s ${PWD}/i3 ~/.config/i3;
+    ln -s ${PWD}/polybar ~/.config/polybar;
+    ln -s ${PWD}/gtk-3.0 ~/.config/gtk-3.0;
+    ln -s ${PWD}/rofi ~/.config/rofi;
 
     echo "Existing files deleted.";
 else
