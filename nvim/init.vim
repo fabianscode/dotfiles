@@ -63,6 +63,7 @@ call plug#begin()
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
     Plug 'kdheepak/lazygit.nvim'
+    Plug 'dense-analysis/ale'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
