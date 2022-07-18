@@ -8,6 +8,7 @@ endif
 
 call plug#begin()
     Plug 'EdenEast/nightfox.nvim'
+    Plug 'morhetz/gruvbox'
     Plug 'vim-scripts/SearchComplete'
     Plug 'itchyny/lightline.vim'
     Plug 'morhetz/gruvbox'
@@ -18,6 +19,7 @@ call plug#begin()
     Plug 'dense-analysis/ale'
     Plug 'vim-autoformat/vim-autoformat'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -71,7 +73,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 syntax on
 syntax enable
 
-colorscheme nightfox
+colorscheme gruvbox
 
 " filetypes
 filetype on
