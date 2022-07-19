@@ -26,6 +26,7 @@ CASE_SENSITIVE="true"
 
 plugins=(git zsh-autosuggestions)
 bindkey '^ ' autosuggest-accept
+bindkey '\t' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
