@@ -25,6 +25,7 @@ alias cat="batcat"
 CASE_SENSITIVE="true"
 
 plugins=(git zsh-autosuggestions)
+bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
