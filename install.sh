@@ -11,6 +11,8 @@ if [ "$CONT" = "y" ]; then
     rm -r ~/.config/polybar;
     rm -r ~/.config/gtk-3.0;
     rm -r ~/.config/rofi;
+    rm ~/.zshrc
+    rm ~/.zshenv
 
     ln -s ${PWD}/sway ~/.config/sway;
     ln -s ${PWD}/alacritty ~/.config/alacritty;
@@ -21,6 +23,8 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/polybar ~/.config/polybar;
     ln -s ${PWD}/gtk-3.0 ~/.config/gtk-3.0;
     ln -s ${PWD}/rofi ~/.config/rofi;
+    ln -s ${PWD}/zshrc ~/.zshrc
+    ln -s ${PWD}/zshenv ~/.zshenv
 
     echo "Existing files deleted.";
 else
