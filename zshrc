@@ -26,7 +26,6 @@ CASE_SENSITIVE="true"
 
 plugins=(git zsh-autosuggestions)
 bindkey '^ ' autosuggest-accept
-bindkey '\t' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,3 +33,8 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 export PATH=$PATH:/home/fabiancodes/.spicetify
+
+alias ls='exa -lah'
+alias ..='cd ..'
+alias vim='nvim'
+alias vi='nvim'
