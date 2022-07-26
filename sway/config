@@ -54,7 +54,7 @@ input type:touchpad {
 }
 
 output * {
-    bg ~/.config/wallpaper/wallpaper.jpg fill
+    bg ~/Documents/dotfiles/wallpapers/gruvbox/sway.png fill
     scale 1.7
 }
 
