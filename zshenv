@@ -1,2 +1,1 @@
 rxfetch
-. "$HOME/.cargo/env"
