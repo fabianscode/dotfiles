@@ -7,6 +7,7 @@ require "user.telescope"
 require "user.lualine"
 require "user.mappings"
 require "user.treesitter"
-require "plug-colorizer"
+require "user.plug-colorizer"
+require "user.marks"
 
 require "user.lsp.language-servers"

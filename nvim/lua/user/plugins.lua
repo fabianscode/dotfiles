@@ -24,6 +24,8 @@ require("packer").startup(function(use)
 	use "norcalli/nvim-colorizer.lua"
 	use "junegunn/rainbow_parentheses.vim"
 
+	use "chentoast/marks.nvim"
+
 	use "hrsh7th/nvim-cmp"
 	use "hrsh7th/cmp-nvim-lsp"
 	use "neovim/nvim-lspconfig"
