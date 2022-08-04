@@ -1,9 +1,8 @@
-local custom_gruvbox = require'lualine.themes.gruvbox'
-custom_gruvbox.normal.c.bg = '#112244'
+local custom = require'lualine.themes.tokyonight'
 
 require("lualine").setup {
 	options = {
-		theme = custom_gruvbox,
+		theme = custom,
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
 	},
