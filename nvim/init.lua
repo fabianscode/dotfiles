@@ -9,5 +9,4 @@ require "user.mappings"
 require "user.treesitter"
 require "plug-colorizer"
 
-require "user.lsp.mappings"
 require "user.lsp.language-servers"
