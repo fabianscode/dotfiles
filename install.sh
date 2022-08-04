@@ -25,8 +25,8 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/gtk-3.0 ~/.config/gtk-3.0;
     ln -s ${PWD}/rofi ~/.config/rofi;
     ln -s ${PWD}/gdb ~/.config/gdb;
-    ln -s ${PWD}/zshrc ~/.zshrc
-    ln -s ${PWD}/zshenv ~/.zshenv
+    ln -s ${PWD}/zsh/zshrc ~/.zshrc
+    ln -s ${PWD}/zsh/zshenv ~/.zshenv
 
     echo "Existing files deleted.";
 else
