@@ -6,7 +6,7 @@ local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 local nvim_lsp = require('lspconfig')
 
-local on_attach  = function(client, bufnr)
+local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
     local opts = { noremap=true, silent=true }
@@ -32,6 +32,9 @@ local servers = {
 	'tsserver',
 	'ocamllsp',
 	'pyright',
+	'sumneko_lua',
+	'cssmodules_ls',
+	'tsserver'
 }
 
 for _, lsp in ipairs(servers) do

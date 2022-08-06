@@ -1,57 +1,54 @@
-alpha='ee'
-base03='#002b36'
-base02='#073642'
-base01='#586e75'
-base00='#657b83'
-base0='#839496'
-base1='#93a1a1'
-base2='#eee8d5'
-base3='#fdf6e3'
-yellow='#D79921'
-orange='#D65d0E'
-red='#CC241D'
-magenta='#B16286'
-violet='#D3869B'
-blue='#458588'
-cyan='#83A598'
-green='#B8BB26'
+# from https://github.com/fccapria/i3lock-color-dracula-theme/blob/master/lock.sh
+
+alpha='dd'
+background='#282a36'
+selection='#44475a'
+comment='#6272a4'
+
+yellow='#f1fa8c'
+orange='#ffb86c'
+red='#ff5555'
+magenta='#ff79c6'
+blue='#6272a4'
+cyan='#8be9fd'
+green='50fa7b'
 
 i3lock \
-    --insidever-color=$base02$alpha \
-    --insidewrong-color=$base02$alpha \
-    --inside-color=$base02$alpha \
-    --ringver-color=$green$alpha \
-    --ringwrong-color=$red$alpha \
-    --ringver-color=$green$alpha \
-    --ringwrong-color=$red$alpha \
-    --ring-color=$green$alpha \
-    --line-uses-ring \
-    --keyhl-color=$orange$alpha \
-    --bshl-color=$orange$alpha \
-    --separator-color=$base01$alpha \
-    --verif-color=$green \
-    --wrong-color=$red \
-    --layout-color=$green \
-    --date-color=$green \
-    --time-color=$green \
-    --screen 2 \
-    --blur 2 \
-    --clock \
-    --indicator \
-    --time-str="%H:%M:%S" \
-    --date-str="%a %b %e %Y" \
-    --verif-text="Verifying..." \
-    --wrong-text="Auth Failed" \
-    --noinput="No Input" \
-    --lock-text="Locking..." \
-    --lockfailed="Failed" \
-    --time-font="Helvetica" \
-    --date-font="Helvetica" \
-    --layout-font="Helvetica" \
-    --verif-font="Helvetica" \
-    --wrong-font="Helvetica" \
-    --radius=100 \
-    --ring-width=10 \
-    --pass-media-keys \
-    --pass-screen-keys \
-    --pass-volume-keys \
+  --insidever-color=$selection$alpha \
+  --insidewrong-color=$selection$alpha \
+  --inside-color=$selection$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ring-color=$blue$alpha \
+  --line-uses-ring \
+  --keyhl-color=$magenta$alpha \
+  --bshl-color=$orange$alpha \
+  --separator-color=$selection$alpha \
+  --verif-color=$green \
+  --wrong-color=$red \
+  --layout-color=$blue \
+  --date-color=$blue \
+  --time-color=$blue \
+  --screen 2 \
+  --blur 1 \
+  --clock \
+  --indicator \
+  --time-str="%H:%M:%S" \
+  --date-str="%A %e %B %Y" \
+  --verif-text="Checking..." \
+  --wrong-text="Wrong pswd" \
+  --noinput="No Input" \
+  --lock-text="Locking..." \
+  --lockfailed="Lock Failed" \
+  --time-font="JetBrainsMono Nerd Font" \
+  --date-font="JetBrainsMono Nerd Font" \
+  --layout-font="JetBrainsMono Nerd Font" \
+  --verif-font="JetBrainsMono Nerd Font" \
+  --wrong-font="JetBrainsMono Nerd Font" \
+  --radius=120 \
+  --ring-width=10 \
+  --pass-media-keys \
+  --pass-screen-keys \
+  --pass-volume-keys \
