@@ -3,7 +3,7 @@ env:
 
 ## Terminal window settings
 window:
-  opacity: 0.8
+  opacity: 0.9
   dimensions:
     columns: 84
     lines: 22

@@ -6,7 +6,8 @@ require("packer").startup(function(use)
 
 	use "ellisonleao/gruvbox.nvim"
 	use "EdenEast/nightfox.nvim"
-	use 'folke/tokyonight.nvim'
+	use "folke/tokyonight.nvim"
+	use "Mofiqul/dracula.nvim"
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',

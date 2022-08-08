@@ -28,24 +28,52 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 local servers = { 
-	'clangd',
 	'tsserver',
 	'ocamllsp',
-	'pyright',
 	'sumneko_lua',
 	'cssmodules_ls',
 	'tsserver'
 }
 
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        }
-    }
-end
+
+nvim_lsp['clangd'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	}
+}
+
+nvim_lsp.pyright.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	}
+}
+
+nvim_lsp.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 vim.o.completeopt = 'menuone,noselect'
 
