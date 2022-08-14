@@ -6,6 +6,38 @@ local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 local nvim_lsp = require('lspconfig')
 
+lspkind.init({
+    mode = 'symbol_text',
+    preset = 'codicons',
+    symbol_map = {
+		Text = "",
+		Method = "",
+		Function = "",
+		Constructor = "",
+		Field = "ﰠ",
+		Variable = "",
+		Class = "ﴯ",
+		Interface = "",
+		Module = "",
+		Property = "ﰠ",
+		Unit = "塞",
+		Value = "",
+		Enum = "",
+		Keyword = "",
+		Snippet = "",
+		Color = "",
+		File = "",
+		Reference = "",
+		Folder = "",
+		EnumMember = "",
+		Constant = "",
+		Struct = "פּ",
+		Event = "",
+		Operator = "",
+		TypeParameter = ""
+    },
+})
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
@@ -27,16 +59,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-local servers = { 
-	'tsserver',
-	'ocamllsp',
-	'sumneko_lua',
-	'cssmodules_ls',
-	'tsserver'
-}
-
-
-nvim_lsp['clangd'].setup {
+nvim_lsp.clangd.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = {
@@ -60,13 +83,25 @@ nvim_lsp.pyright.setup {
 	}
 }
 
+nvim_lsp.sumneko_lua.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	}
+}
 
-vim.o.completeopt = 'menuone,noselect'
+nvim_lsp.tsserver.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	}
+}
+
+vim.o.completeopt = 'menuone,noselect,menu'
 
 cmp.setup {
-	formatting = {
-		format = lspkind.cmp_format()
-	},
 	mapping = {
 		['<TAB>'] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
@@ -76,7 +111,7 @@ cmp.setup {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		},
-		['J'] = function(fallback)
+		['<C-J>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -85,7 +120,7 @@ cmp.setup {
 				fallback()
 			end
 		end,
-		['K'] = function(fallback)
+		['<C-K>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -97,13 +132,30 @@ cmp.setup {
 	},
 	snippet = {
 		expand = function(args)
-		luasnip.lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end
 	},
 	sources = {
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }
+		{ name = 'luasnip' },
+		{ name = 'nvim_lua' },
+		{ name = 'buffer', keyword_length = 4 },
 	},
+	formatting = {
+		format = lspkind.cmp_format {
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[lsp]",
+				nvim_lua = "[api]",
+				luasnip = "[snip]",
+			},
+		},
+	},
+	experimental = {
+		native_menu = false,
+		ghost_text = true
+	}
 }
 
 
