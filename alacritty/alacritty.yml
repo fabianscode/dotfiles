@@ -26,6 +26,13 @@ cursor:
 
   unfocused_hollow: false
 
+font:
+  normal:
+    family: TerminessTTF Nerd Font
+    style: Regular
+
+  size: 12
+
 live_config_reload: true
 
 # from https://github.com/dracula/alacritty/blob/master/dracula.yml
