@@ -1,4 +1,4 @@
-local custom = require'lualine.themes.tokyonight'
+local custom = require"lualine.themes.onedark"
 
 require("lualine").setup {
 	options = {
@@ -9,9 +9,9 @@ require("lualine").setup {
 	sections = {
 		lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 		lualine_b = { "filename", "branch", { "diff", colored = false } },
-		lualine_c = {},
+		lualine_c = { "diagnostics" },
 		lualine_x = {},
-		lualine_y = { "filetype", "progress" },
+		lualine_y = { "filetype" },
 		lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
 	},
 	inactive_sections = {

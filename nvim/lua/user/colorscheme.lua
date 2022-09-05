@@ -1,3 +1,3 @@
--- vim.g.tokyonight_style = "storm"
-vim.cmd([[colorscheme dracula]])
-
+vim.cmd [[
+	colorscheme onedark
+]]

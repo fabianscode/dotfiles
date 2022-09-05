@@ -1,7 +1,7 @@
 require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
-	use 'lewis6991/impatient.nvim'
+	use "lewis6991/impatient.nvim"
 
 	use "glepnir/dashboard-nvim"
 	use "andweeb/presence.nvim"
@@ -10,18 +10,19 @@ require("packer").startup(function(use)
 	use "EdenEast/nightfox.nvim"
 	use "folke/tokyonight.nvim"
 	use "Mofiqul/dracula.nvim"
+	use "navarasu/onedark.nvim"
 
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		"nvim-telescope/telescope.nvim", tag = "0.1.0",
+		requires = { {"nvim-lua/plenary.nvim"} }
 	}
 	use "nvim-telescope/telescope-file-browser.nvim"
 
 	use "nvim-lualine/lualine.nvim"
 
 	use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
     }
 
 	use "norcalli/nvim-colorizer.lua"
@@ -32,7 +33,19 @@ require("packer").startup(function(use)
 
 	use "lukas-reineke/indent-blankline.nvim"
 
-	use 'mfussenegger/nvim-dap'
+	use "mfussenegger/nvim-dap"
+
+	use({
+		'ray-x/navigator.lua',
+		requires = {
+			{ 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+			{ 'neovim/nvim-lspconfig' },
+		},
+	})
+
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+	  require("toggleterm").setup()
+	end}
 
 	-- nvim-cmp
 	use "hrsh7th/nvim-cmp"

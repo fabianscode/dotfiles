@@ -1,4 +1,5 @@
 #!/bin/sh
+
 swayidle \
     timeout 20 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
@@ -12,11 +13,11 @@ swaylock \
     --datestr %d/%m/%Y \
     --screenshots \
     --indicator-caps-lock \
-    --bs-hl-color 458588cc \
+    --bs-hl-color 61afefcc \
     --caps-lock-bs-hl-color 458588cc \
     --caps-lock-key-hl-color d3869bcc \
-    --font JetBrains Mono \
-    --font-size 35 \
+    --font "TerminessTTF Nerd Font" \
+    --font-size 40 \
     --indicator-idle-visible \
     --indicator-radius 100 \
     --indicator-thickness 7 \
@@ -29,13 +30,13 @@ swaylock \
     --layout-bg-color 28282800 \
     --layout-text-color fbf1c7 \
     --line-color 00000000 \
-    --ring-color fe8019cc \
+    --ring-color 61afefcc \
     --ring-clear-color 8ec07ccc \
     --ring-caps-lock-color fe8019cc \
     --ring-ver-color 458588cc \
     --ring-wrong-color fb4934cc \
     --separator-color 00000000 \
-    --text-color fbf1c7 \
+    --text-color 61afef \
     --text-clear-color fbf1c7 \
     --text-caps-lock-color fbf1c7 \
     --text-ver-color fbf1c7 \

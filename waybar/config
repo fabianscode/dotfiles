@@ -1,65 +1,73 @@
 {
-    "height": 18, 
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["custom/clock"],
-    "modules-right": ["pulseaudio", "network", "backlight", "battery", "tray"],
+	"height": 18, 
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": [],
+	"modules-right": ["pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "custom/clock": {
-        "exec": "echo '  '$(date +'%H:%M:%S - %d.%m.%Y')'  '",
-        "interval": 10
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{volume}%   {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "{icon} {format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "   {volume}%   ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    }
+	"sway/mode": {
+		"format": "<span style=\"italic\">{}</span>"
+	},
+	"custom/clock": {
+		"exec": "echo '  '$(date +'%H:%M - %d.%m.%Y')'  '",
+		"interval": 10,
+	},
+	"cpu": {
+		"format": "{usage}% ",
+		"tooltip": false
+	},
+		"memory": {
+		"format": "{}% "
+	},
+	"backlight": {
+		"format": "  {percent}% {icon}  ",
+		"format-icons": ["", ""],
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"network": {
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}",
+	},
+	"pulseaudio": {
+		"format": "{volume}%   {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": "{icon} {format_source}",
+		"format-muted": "{format_source}",
+		"format-source": "   {volume}%   ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol",
+	},
+	"custom/nmvpn": {
+		"format": "  {} {icon}",
+		"return-type": "json",
+		"exec": "~/go/bin/waybar-nmvpn",
+		"format-icons": {
+			"connected": " ",
+			"disconnected": " ",
+			"none": "",
+			"error": " ⚠"
+		},
+	}
 }

@@ -31,60 +31,27 @@ font:
     family: TerminessTTF Nerd Font
     style: Regular
 
-  size: 12
+  size: 11
 
 live_config_reload: true
 
-# from https://github.com/dracula/alacritty/blob/master/dracula.yml
+# Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
 colors:
   primary:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-    bright_foreground: '#ffffff'
+    background: "#282c34"
+    foreground: "#abb2bf"
   cursor:
-    text: CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '#44475a'
-      background: '#50fa7b'
-    focused_match:
-      foreground: '#44475a'
-      background: '#ffb86c'
-  footer_bar:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-  hints:
-    start:
-      foreground: '#282a36'
-      background: '#f1fa8c'
-    end:
-      foreground: '#f1fa8c'
-      background: '#282a36'
-  line_indicator:
-    foreground: None
-    background: None
+    text:       CellBackground
+    cursor:     "#528bff" # syntax-cursor-color
   selection:
-    text: CellForeground
-    background: '#44475a'
+    text:       CellForeground
+    background: "#3e4451" # syntax-selection-color
   normal:
-    black: '#21222c'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#bd93f9'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#f8f8f2'
-  bright:
-    black: '#6272a4'
-    red: '#ff6e6e'
-    green: '#69ff94'
-    yellow: '#ffffa5'
-    blue: '#d6acff'
-    magenta: '#ff92df'
-    cyan: '#a4ffff'
-    white: '#ffffff'
+    black:      "#5c6370" # mono-3
+    red:        "#e06c75" # red 1
+    green:      "#98c379"
+    yellow:     "#e5c07b" # orange 2
+    blue:       "#61afef"
+    magenta:    "#c678dd"
+    cyan:       "#56b6c2"
+    white:      "#828997" # mono-2
