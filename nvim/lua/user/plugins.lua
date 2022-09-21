@@ -25,6 +25,8 @@ require("packer").startup(function(use)
         run = ":TSUpdate"
     }
 
+	use 'nvim-treesitter/nvim-treesitter-context'
+
 	use "norcalli/nvim-colorizer.lua"
 	use "junegunn/rainbow_parentheses.vim"
 
@@ -33,15 +35,20 @@ require("packer").startup(function(use)
 
 	use "lukas-reineke/indent-blankline.nvim"
 
-	use "mfussenegger/nvim-dap"
+	use "RishabhRD/popfix"
+	use "RishabhRD/nvim-lsputils"
 
-	use({
-		'ray-x/navigator.lua',
-		requires = {
-			{ 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-			{ 'neovim/nvim-lspconfig' },
-		},
-	})
+	use "mfussenegger/nvim-dap"
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use "theHamsta/nvim-dap-virtual-text"
+
+	-- use({
+	-- 	'ray-x/navigator.lua',
+	-- 	requires = {
+	-- 		{ 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+	-- 		{ 'neovim/nvim-lspconfig' },
+	-- 	},
+	-- })
 
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 	  require("toggleterm").setup()

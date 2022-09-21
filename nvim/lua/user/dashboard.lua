@@ -35,10 +35,5 @@ db.custom_center = {
 		icon = " ",
 		desc = " Configure Neovim    ",
 		action = "edit ~/.config/nvim/lua/init.lua",
-	},
-	{
-		icon = " ",
-		desc = " Exit Neovim          ",
-		action = "quit",
 	}
 }

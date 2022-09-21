@@ -139,8 +139,11 @@ cmp.setup {
 	},
 	snippet = {
 		expand = function(args)
+			if not luasnip then
+				return
+			end
 			luasnip.lsp_expand(args.body)
-		end
+		end,
 	},
 	sources = {
 		{ name = 'nvim_lsp' },
@@ -172,3 +175,4 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
