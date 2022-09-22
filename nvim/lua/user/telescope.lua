@@ -11,3 +11,9 @@ telescope.setup {
 }
 
 telescope.load_extension "file_browser"
+
+
+
+
+vim.keymap.set("n", "<C-f>", require("telescope.builtin").find_files)
+vim.keymap.set("n", "<C-g>", require("telescope.builtin").live_grep)

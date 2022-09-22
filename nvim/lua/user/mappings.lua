@@ -4,8 +4,6 @@ vim.keymap.set("i", "jj", "<ESC>")
 
 vim.keymap.set("n", "<C-l>", "o<ESC>")
 
-vim.keymap.set("n", "f", require("telescope.builtin").find_files)
-
 vim.keymap.set("n", "J", "}")
 vim.keymap.set("n", "K", "{")
 
@@ -21,7 +19,7 @@ vim.keymap.set("v", "<C-k>", "3k")
 
 --dap
 
-vim.keymap.set("n", "<C-b>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+vim.keymap.set("n", "<C-b>", ":PBToggleBreakpoint<CR>", opts)
 vim.keymap.set("n", "<C-c>", ":lua require'dap'.continue()<CR>", opts)
 vim.keymap.set("n", "<C-s>", ":lua require'dap'.step_over()<CR>", opts)
 vim.keymap.set("n", "<C-o>", ":lua require'dap'.step_into()<CR>", opts)

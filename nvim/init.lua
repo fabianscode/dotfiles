@@ -1,3 +1,4 @@
+--general
 require "impatient"
 require "user.general"
 require "user.plugins"
@@ -14,7 +15,12 @@ require "user.autocmd"
 require "user.indentation"
 require "user.dap"
 require "user.toggleterm"
+require "user.test"
+require "user.experimental"
+
+--language servers
+require "user.lsp.language-servers"
+
+--luasnip
 require "user.luasnip.config"
 require "user.luasnip.snippets"
-
-require "user.lsp.language-servers"

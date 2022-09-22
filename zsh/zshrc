@@ -32,12 +32,13 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-export PATH=$PATH:/home/fabiancodes/.spicetify
-export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
+export PATH="$PATH:/home/fabiancodes/.spicetify"
+export PATH="$PATH/home/fabiancodes/tools/lua-language-server/bin/Linux:$PATH"
+export PATH="$PATH:/home/fabiancodes/.local/bin"
 
 alias ls='exa -lah'
 alias ..='cd ..'
-alias vim='nvim'
+#alias vim='nvim'
 alias vi='nvim'
 
 alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"

@@ -1,14 +1,14 @@
 -- from https://www.jakewiesler.com/blog/getting-started-with-vim#lspconfig
 
-local cmp = require('cmp')
-local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local lspkind = require('lspkind')
-local luasnip = require('luasnip')
-local nvim_lsp = require('lspconfig')
+local cmp = require("cmp")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local lspkind = require("lspkind")
+local luasnip = require("luasnip")
+local nvim_lsp = require("lspconfig")
 
 lspkind.init({
-	mode = 'symbol_text',
-	preset = 'codicons',
+	mode = "symbol_text",
+	preset = "codicons",
 	symbol_map = {
 		Text = "",
 		Method = "",
@@ -44,12 +44,12 @@ local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-	buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-	buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-	buf_set_keymap('n', '<F6>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-	buf_set_keymap('n', '<F3>', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	buf_set_keymap("n", "<F6>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 	client.resolved_capabilities.document_formatting = true
 	client.resolved_capabilities.document_range_formatting = true
@@ -92,7 +92,7 @@ nvim_lsp.sumneko_lua.setup {
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { 'vim' }
+				globals = { "vim" }
 			}
 		}
 	}
@@ -106,19 +106,45 @@ nvim_lsp.tsserver.setup {
 	}
 }
 
-vim.o.completeopt = 'menuone,noselect,menu'
+--nvim_lsp.rust_analyzer.setup {
+--	capabilities = capabilities,
+--	on_attach = on_attach,
+--	settings = {
+--        ["rust-analyzer"] = {
+--            imports = {
+--                granularity = {
+--                    group = "module",
+--                },
+--                prefix = "self",
+--            },
+--            cargo = {
+--                buildScripts = {
+--                    enable = true,
+--                },
+--            },
+--            procMacro = {
+--                enable = true
+--            },
+--        }
+--    },
+--	flags = {
+--		debounce_text_changes = 150,
+--	}
+--}
+
+vim.o.completeopt = "menuone,noselect,menu"
 
 cmp.setup {
 	mapping = {
-		['<TAB>'] = cmp.mapping.confirm {
+		["<TAB>"] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		},
-		['<C-Space>'] = cmp.mapping.confirm {
+		["<C-Space>"] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		},
-		['<C-J>'] = function(fallback)
+		["<C-J>"] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -127,7 +153,7 @@ cmp.setup {
 				fallback()
 			end
 		end,
-		['<C-K>'] = function(fallback)
+		["<C-K>"] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -146,10 +172,10 @@ cmp.setup {
 		end,
 	},
 	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
-		{ name = 'nvim_lua' },
-		{ name = 'buffer', keyword_length = 4 },
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "nvim_lua" },
+		{ name = "buffer", keyword_length = 4 },
 	},
 	formatting = {
 		format = lspkind.cmp_format {
@@ -169,10 +195,11 @@ cmp.setup {
 }
 
 
+
+
 -- from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#change-diagnostic-symbols-in-the-sign-column-gutter
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-

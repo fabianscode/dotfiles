@@ -1,5 +1,17 @@
+local function mysplit(inputstr, sep)
+	if sep == nil then
+		sep = "%s"
+	end
+	local t = {}
+	for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+		table.insert(t, str)
+	end
+	return t
+end
+
 local dap = require("dap")
 
+-- for c and cpp
 dap.adapters.cppdbg = {
 	id = "cppdbg",
 	type = "executable",
@@ -17,23 +29,105 @@ dap.configurations.cpp = {
 		end,
 		cwd = "${workspaceFolder}",
 		stopAtEntry = true,
+		args = function()
+			return mysplit(vim.fn.input("Params: "), ";")
+		end
 	},
-	-- {
-	-- 	name = "Attach to gdbserver :1234",
-	-- 	type = "cppdbg",
-	-- 	request = "launch",
-	-- 	MIMode = "gdb",
-	-- 	miDebuggerServerAddress = "localhost:1234",
-	-- 	miDebuggerPath = "/usr/bin/gdb",
-	-- 	cwd = "${workspaceFolder}",
-	-- 	program = function()
-	-- 		return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-	-- 	end,
-	-- },
+	{
+		name = "Attach to gdbserver :1234",
+		type = "cppdbg",
+		request = "launch",
+		MIMode = "gdb",
+		miDebuggerServerAddress = "localhost:1234",
+		miDebuggerPath = "/usr/bin/gdb",
+		cwd = "${workspaceFolder}",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		setupCommands = {
+			{
+				text = "-enable-pretty-printing",
+				description = "enable pretty printing",
+				ignoreFailures = false
+			},
+		},
+		args = function()
+			return mysplit(vim.fn.input("Params: "), ";")
+		end
+
+	},
 }
 
 dap.configurations.c = dap.configurations.cpp
 
+dap.configurations.rust = {
+	{
+		name = "Launch file",
+		type = "cppdbg",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		cwd = "${workspaceFolder}",
+		stopAtEntry = true,
+	},
+	{
+		name = "Attach to gdbserver :1234",
+		type = "cppdbg",
+		request = "launch",
+		MIMode = "gdb",
+		miDebuggerServerAddress = "localhost:1234",
+		miDebuggerPath = "/usr/bin/gdb",
+		cwd = "${workspaceFolder}",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		setupCommands = {
+			{
+				text = "-enable-pretty-printing",
+				description = "enable pretty printing",
+				ignoreFailures = false
+			},
+		},
+	},
+}
+
+
+-- for python
+dap.adapters.python = {
+	type = "executable";
+	command = "/usr/bin/python3";
+	args = { "-m", "debugpy.adapter" };
+}
+
+
+dap.configurations.python = {
+	{
+		-- The first three options are required by nvim-dap
+		type = "python"; -- the type here established the link to the adapter definition: `dap.adapters.python`
+		request = "launch";
+		name = "Launch file";
+
+		-- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+		program = "${file}"; -- This configuration will launch the current file if used.
+		pythonPath = function()
+			-- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+			-- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+			-- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+			local cwd = vim.fn.getcwd()
+			if vim.fn.executable(cwd .. "/venv/bin/python3") == 1 then
+				return cwd .. "/venv/bin/python3"
+			elseif vim.fn.executable(cwd .. "/.venv/bin/python3") == 1 then
+				return cwd .. "/.venv/bin/python3"
+			else
+				return "/usr/bin/python3"
+			end
+		end;
+	},
+}
+
+--------------------------------------------------------------------------------------------------------
 
 local dapui = require("dapui")
 
@@ -48,13 +142,6 @@ dapui.setup({
 		toggle = "t",
 	},
 	expand_lines = false,
-	-- Layouts define sections of the screen to place windows.
-	-- The position can be "left", "right", "top" or "bottom".
-	-- The size specifies the height/width depending on position. It can be an Int
-	-- or a Float. Integer specifies height/width directly (i.e. 20 lines/columns) while
-	-- Float value specifies percentage (i.e. 0.3 - 30% of available lines/columns)
-	-- Elements are the elements shown in the layout (in order).
-	-- Layouts are opened in order so that earlier layouts take priority in window sizing.
 	layouts = {
 		{
 			elements = {
@@ -114,29 +201,34 @@ require("nvim-dap-virtual-text").setup {
 
 local api = vim.api
 local keymap_restore = {}
-dap.listeners.after['event_initialized']['me'] = function()
-  for _, buf in pairs(api.nvim_list_bufs()) do
-    local keymaps = api.nvim_buf_get_keymap(buf, 'n')
-    for _, keymap in pairs(keymaps) do
-      if keymap.lhs == "Q" then
-        table.insert(keymap_restore, keymap)
-        api.nvim_buf_del_keymap(buf, 'n', 'Q')
-      end
-    end
-  end
-  api.nvim_set_keymap(
-    'n', 'Q', '<Cmd>lua require("dap.ui.widgets").hover()<CR>', { silent = true })
+dap.listeners.after["event_initialized"]["me"] = function()
+	for _, buf in pairs(api.nvim_list_bufs()) do
+		local keymaps = api.nvim_buf_get_keymap(buf, "n")
+		for _, keymap in pairs(keymaps) do
+			if keymap.lhs == "Q" then
+				table.insert(keymap_restore, keymap)
+				api.nvim_buf_del_keymap(buf, "n", "Q")
+			end
+		end
+	end
+	api.nvim_set_keymap(
+		"n", "Q", "<Cmd>lua require(\"dap.ui.widgets\").hover()<CR>", { silent = true })
 end
 
-dap.listeners.after['event_terminated']['me'] = function()
-  for _, keymap in pairs(keymap_restore) do
-    api.nvim_buf_set_keymap(
-      keymap.buffer,
-      keymap.mode,
-      keymap.lhs,
-      keymap.rhs,
-      { silent = keymap.silent == 1 }
-    )
-  end
-  keymap_restore = {}
+dap.listeners.after["event_terminated"]["me"] = function()
+	for _, keymap in pairs(keymap_restore) do
+		api.nvim_buf_set_keymap(
+			keymap.buffer,
+			keymap.mode,
+			keymap.lhs,
+			keymap.rhs,
+			{ silent = keymap.silent == 1 }
+		)
+	end
+	keymap_restore = {}
 end
+
+vim.fn.sign_define("DapBreakpoint", { text = "B‣", texthl = "", linehl = "", numhl = "" })
+
+require('persistent-breakpoints').setup {}
+vim.api.nvim_create_autocmd({ "BufReadPost" }, { callback = require('persistent-breakpoints.api').load_breakpoints })
