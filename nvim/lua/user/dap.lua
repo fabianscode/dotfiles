@@ -30,7 +30,7 @@ dap.configurations.cpp = {
 		cwd = "${workspaceFolder}",
 		stopAtEntry = true,
 		args = function()
-			return mysplit(vim.fn.input("Params: "), ";")
+			return mysplit(vim.fn.input("Params: "), " ")
 		end
 	},
 	{
@@ -52,7 +52,7 @@ dap.configurations.cpp = {
 			},
 		},
 		args = function()
-			return mysplit(vim.fn.input("Params: "), ";")
+			return mysplit(vim.fn.input("Params: "), " ")
 		end
 
 	},

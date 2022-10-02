@@ -1,7 +1,5 @@
 local o = vim.o
 
-vim.g.mapleader = "<Space>"
-
 o.clipboard = "unnamedplus"
 o.ignorecase = true
 o.number = true

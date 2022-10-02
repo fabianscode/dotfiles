@@ -10,10 +10,6 @@ telescope.setup {
 	extensions = { file_browser = { hidden = true } },
 }
 
-telescope.load_extension "file_browser"
+telescope.load_extension("file_browser")
+telescope.load_extension("harpoon")
 
-
-
-
-vim.keymap.set("n", "<C-f>", require("telescope.builtin").find_files)
-vim.keymap.set("n", "<C-g>", require("telescope.builtin").live_grep)

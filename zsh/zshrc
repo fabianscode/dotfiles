@@ -25,9 +25,17 @@ alias cat="batcat"
 CASE_SENSITIVE="true"
 
 plugins=(git zsh-autosuggestions)
-bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#76b5c5,underline'
+
+function my_init() {
+	bindkey '^ ' autosuggest-accept
+}
+zvm_after_init_commands+=(my_init)
 
 export EDITOR="nvim"
 export VISUAL="nvim"
