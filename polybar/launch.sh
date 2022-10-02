@@ -7,8 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar, using default config location ~/.config/polybar/config
-polybar DP-1 &
-polybar HDMI-1 &
 polybar DP-2 &
+polybar HDMI-0 &
+polybar DP-4 &
 
 echo "Polybar launched..."
