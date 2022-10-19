@@ -1,3 +1,5 @@
+#!/bin/sh
+
 read -p "This script will delete your existing configuration files. This includes sway, nvim, waybar and alacritty. Would you like to continue? (y/N)?" CONT
 if [ "$CONT" = "y" ]; then
     echo "Deleting existing files...";
