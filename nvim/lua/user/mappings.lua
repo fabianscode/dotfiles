@@ -57,11 +57,11 @@ vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>g", require("telescope.builtin").live_grep)
 
 
-vim.keymap.set("n", "<leader>h", ":Telescope harpoon marks<CR>")
+vim.keymap.set("n", "<leader>h", require("harpoon.ui").toggle_quick_menu)
 
-vim.keymap.set("n", "<leader>t", "lua require(\"harpoon.ui\").add_file()<CR>")
-vim.keymap.set("n", "<leader>n", ":lua require(\"harpoon.ui\").nav_next()<CR>")
-vim.keymap.set("n", "<leader>p", ":lua require(\"harpoon.ui\").nav_prev()<CR>")
+vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file)
+vim.keymap.set("n", "<leader>n", require("harpoon.ui").nav_next)
+vim.keymap.set("n", "<leader>p", require("harpoon.ui").nav_prev)
 
 vim.keymap.set("n", "<C-h>", ":lua require(\"harpoon.ui\").nav_file(1)<CR>", opts)
 vim.keymap.set("n", "<C-j>", ":lua require(\"harpoon.ui\").nav_file(2)<CR>", opts)

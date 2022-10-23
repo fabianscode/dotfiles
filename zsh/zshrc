@@ -43,6 +43,7 @@ export VISUAL="nvim"
 export PATH="$PATH:/home/fabiancodes/.spicetify"
 export PATH="$PATH/home/fabiancodes/tools/lua-language-server/bin/Linux:$PATH"
 export PATH="$PATH:/home/fabiancodes/.local/bin"
+export PATH="$PATH:/home/fabian/.local/bin"
 
 alias ls='exa -lah'
 alias ..='cd ..'
@@ -55,4 +56,7 @@ alias cth="nmcli connection up HomeVPN --ask"
 alias dfh="nmcli connection down HomeVPN"
 
 # opam configuration
-[[ ! -r /home/fabiancodes/.opam/opam-init/init.zsh ]] || source /home/fabiancodes/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/fabian/.opam/opam-init/init.zsh ]] || source /home/fabian/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+export LC_ALL=de_DE.UTF-8
+export LANG=de_DE.UTF-8

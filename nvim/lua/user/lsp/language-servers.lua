@@ -49,14 +49,14 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "<F6>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 
-	client.resolved_capabilities.document_formatting = true
-	client.resolved_capabilities.document_range_formatting = true
+	--client.resolved_capabilities.document_formatting = true
+	--client.resolved_capabilities.document_range_formatting = true
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 capabilities.offsetEncoding = { "utf-8" }
 
 nvim_lsp.clangd.setup {
@@ -95,6 +95,14 @@ nvim_lsp.sumneko_lua.setup {
 				globals = { "vim" }
 			}
 		}
+	}
+}
+
+nvim_lsp.rust_analyzer.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
 	}
 }
 
