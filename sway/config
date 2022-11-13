@@ -42,7 +42,7 @@ input type:touchpad {
 }
 
 output * {
-    bg ~/Documents/dotfiles/wallpapers/other/0010.jpg fill
+    bg ~/Documents/dotfiles/wallpapers/other/stockholm.jpg fill
     scale 1.7
 }
 
@@ -63,6 +63,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+m exec wl-mirror -r '0,0 1327x884'
 
 bindsym $mod+p exec $scnshot
 bindsym $mod+Return exec $term
