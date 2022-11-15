@@ -106,6 +106,14 @@ nvim_lsp.rust_analyzer.setup {
 	}
 }
 
+nvim_lsp.jdtls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	}
+}
+
 nvim_lsp.tsserver.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,

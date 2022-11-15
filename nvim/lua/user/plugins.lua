@@ -31,6 +31,7 @@ require("packer").startup(function(use)
 	use "chentoast/marks.nvim"
 	use "junegunn/goyo.vim"
 	use "lukas-reineke/indent-blankline.nvim"
+	--use "lukas-reineke/virt-column.nvim"
 	use "RishabhRD/popfix"
 
 
