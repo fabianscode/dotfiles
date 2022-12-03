@@ -2,59 +2,47 @@
 local luasnip = require "luasnip"
 
 local snip = luasnip.snippet
-local node = luasnip.snippet_node
 local text = luasnip.text_node
 local insert = luasnip.insert_node
-local func = luasnip.function_node
-local choice = luasnip.choice_node
-local dynamicn = luasnip.dynamic_node
-
-local date = function()
-	return {
-		os.date('%Y-%m-%d')
-	}
-end
 
 luasnip.add_snippets(nil, {
 	all = {
 		snip({
-			trig = "date",
-			namr = "Date",
-			dscr = "Date in the form of YYYY-MM-DD",
+			trig = "{",
+			namr = "open_brackets",
+			dscr = "open brackets with cursor positioning"
 		}, {
-			func(date, {}),
+			text({ "{", "    " }),
+			insert(1, "statement"),
+			text({ "", "}" })
 		}),
-		snip({
-			trig = "meta",
-			namr = "Metadata",
-			dscr = "Yaml metadata format for markdown"
-		},
-			{
-				text({ "---",
-					"title: " }), insert(1, "note_title"), text({ "",
-					"author: " }), insert(2, "author"), text({ "",
-					"date: " }), func(date, {}), text({ "",
-					"categories: [" }), insert(3, ""), text({ "]",
-					"lastmod: " }), func(date, {}), text({ "",
-					"tags: [" }), insert(4), text({ "]",
-					"comments: true",
-					"---", "" }),
-				insert(0)
-			}),
-		snip({
-			trig = "link",
-			namr = "markdown_link",
-			dscr = "Create markdown link [txt](url)"
-		},
-			{
-				text('['),
-				insert(1),
-				text(']('),
-				func(function(_, s)
-					return s.env.TM_SELECTED_TEXT[1] or {}
-				end, {}),
-				text(')'),
-				insert(0),
-			}),
 	},
+	c = {
+	    snip({
+	        trig = "malloc",
+			namr = "malloc w check",
+			dscr = "malloc with NULL check"
+	    }, {
+			insert(1, "type"),
+			text({ "* " }),
+			insert(2, "name"),
+			text({ " = (" }),
+			insert(3, "type"),
+			text({ "*) malloc(sizeof(" }),
+			insert(4, "type"),
+			text({ ") * " }),
+			insert(5, "x"),
+			text({ ");", "", "" }),
+			text({ "if (" }),
+			insert(6, "name"),
+			text({ " == NULL) {", "    " }),
+			text({ "printf(\"Out of memory\\n\");", "" }),
+			text({ "}", "", "" }),
+			insert(7, "statement"),
+			text({ "", "", "" }),
+			text({ "free(" }),
+			insert(8, "name"),
+			text({ ");" }),
+	    })
+	}
 })
