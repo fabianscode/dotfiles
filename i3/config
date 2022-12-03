@@ -6,7 +6,7 @@ set $term alacritty
 set $browser google-chrome-stable
 
 exec "setxkbmap -layout de"
-exec "xrandr-setup.sh"
+exec "exec /home/fabian/.config/i3/xrandr-setup.sh"
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet

@@ -43,16 +43,14 @@ local on_attach = function(client, bufnr)
 
 	local opts = { noremap = true, silent = true }
 
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	buf_set_keymap("n", "sd", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	buf_set_keymap("n", "<F6>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
-
-	--client.resolved_capabilities.document_formatting = true
-	--client.resolved_capabilities.document_range_formatting = true
+	buf_set_keymap("n", "sf", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -122,32 +120,6 @@ nvim_lsp.tsserver.setup {
 	}
 }
 
---nvim_lsp.rust_analyzer.setup {
---	capabilities = capabilities,
---	on_attach = on_attach,
---	settings = {
---        ["rust-analyzer"] = {
---            imports = {
---                granularity = {
---                    group = "module",
---                },
---                prefix = "self",
---            },
---            cargo = {
---                buildScripts = {
---                    enable = true,
---                },
---            },
---            procMacro = {
---                enable = true
---            },
---        }
---    },
---	flags = {
---		debounce_text_changes = 150,
---	}
---}
-
 vim.o.completeopt = "menuone,noselect,menu"
 
 cmp.setup {
@@ -188,10 +160,10 @@ cmp.setup {
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "buffer", keyword_length = 4 },
+		{ name = "buffer", keyword_length = 3 },
 	},
 	formatting = {
 		format = lspkind.cmp_format {
@@ -209,9 +181,6 @@ cmp.setup {
 		ghost_text = true
 	}
 }
-
-
-
 
 -- from https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#change-diagnostic-symbols-in-the-sign-column-gutter
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }

@@ -11,29 +11,11 @@ vim.keymap.set("n", "K", "{")
 vim.keymap.set("v", "J", "}")
 vim.keymap.set("v", "K", "{")
 
-local function insert_curl_par()
-	local pos = vim.api.nvim_win_get_cursor(0)
-	local line = vim.api.nvim_get_current_line()
-	local nline = line:sub(0, pos[2]) .. " {" .. line:sub(pos[2])
-	vim.api.nvim_set_current_line(nline)
-	vim.api.nvim_win_set_cursor(0, { pos[1], pos[2] + 2 })
-	vim.cmd("normal o")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-	pos = vim.api.nvim_win_get_cursor(0)
-	line = vim.api.nvim_get_current_line()
-	nline = line:sub(0, pos[2]) .. "}" .. line:sub(pos[2])
-	vim.api.nvim_set_current_line(nline)
-	vim.api.nvim_win_set_cursor(0, { pos[1], pos[2] + 2 })
-	vim.cmd("normal O")
-
-	pos = vim.api.nvim_win_get_cursor(0)
-	line = vim.api.nvim_get_current_line()
-	nline = line:sub(0, pos[2]) .. "\t" .. line:sub(pos[2])
-	vim.api.nvim_set_current_line(nline)
-	vim.api.nvim_win_set_cursor(0, { pos[1], pos[2] + 2 })
-end
-
-vim.keymap.set("i", "<C-e>", insert_curl_par)
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 --dap
 vim.keymap.set("n", "<C-b>", ":PBToggleBreakpoint<CR>", opts)
