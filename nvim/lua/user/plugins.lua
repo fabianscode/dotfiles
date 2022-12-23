@@ -19,11 +19,14 @@ require("packer").startup(function(use)
 	use "ThePrimeagen/harpoon"
 
 
+	use "sindrets/diffview.nvim"
+
+
 	use "nvim-treesitter/nvim-treesitter"
 	use "nvim-treesitter/nvim-treesitter-context"
 
 
-	use "norcalli/nvim-colorizer.lua"
+	use "brenoprata10/nvim-highlight-colors"
 	use "junegunn/rainbow_parentheses.vim"
 	use "nvim-lualine/lualine.nvim"
 
@@ -31,7 +34,6 @@ require("packer").startup(function(use)
 	use "chentoast/marks.nvim"
 	use "junegunn/goyo.vim"
 	use "lukas-reineke/indent-blankline.nvim"
-	--use "lukas-reineke/virt-column.nvim"
 	use "RishabhRD/popfix"
 
 
@@ -48,6 +50,7 @@ require("packer").startup(function(use)
 	use "simrat39/rust-tools.nvim"
 	use "williamboman/nvim-lsp-installer"
 	--use { "mfussenegger/nvim-jdtls", ft = { "java" } }
+
 
 	use "mfussenegger/nvim-dap"
 	use "rcarriga/nvim-dap-ui"

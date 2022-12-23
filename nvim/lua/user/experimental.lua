@@ -19,3 +19,10 @@ rt.setup({
 	},
 })
 
+-- set vertical split color
+-- vim.cmd[[
+-- 	hi LineNr guibg=bg
+-- 	set foldcolumn=2
+-- 	hi foldcolumn guibg=bg
+-- 	hi VertSplit guibg=bg guifg=#61AFEF
+-- ]]

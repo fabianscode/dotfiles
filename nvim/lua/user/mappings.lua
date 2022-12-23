@@ -11,8 +11,8 @@ vim.keymap.set("n", "K", "{")
 vim.keymap.set("v", "J", "}")
 vim.keymap.set("v", "K", "{")
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>z.")
+vim.keymap.set("n", "<C-u>", "<C-u>z.")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -49,3 +49,10 @@ vim.keymap.set("n", "<C-h>", ":lua require(\"harpoon.ui\").nav_file(1)<CR>", opt
 vim.keymap.set("n", "<C-j>", ":lua require(\"harpoon.ui\").nav_file(2)<CR>", opts)
 vim.keymap.set("n", "<C-k>", ":lua require(\"harpoon.ui\").nav_file(3)<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":lua require(\"harpoon.ui\").nav_file(4)<CR>", opts)
+
+-- show diffs in current branch
+vim.keymap.set("n", "<leader>dg", ":DiffviewFileHistory <CR>", opts)
+
+-- change colortheme
+vim.keymap.set("n", "<leader><leader>l", ":colorscheme gruvbox | set background=light <CR>", opts)
+vim.keymap.set("n", "<leader><leader>d", ":colorscheme onedark | set background=dark <CR>", opts)
