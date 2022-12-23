@@ -14,7 +14,6 @@ require "user.autocmd"
 require "user.indentation"
 require "user.dap"
 require "user.toggleterm"
-require "user.test"
 require "user.diffview"
 require "user.experimental"
 

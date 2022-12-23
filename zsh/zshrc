@@ -1,5 +1,23 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="afowler"
+# general
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+
+
+# default apps
+
+export EDITOR="nvim"
+
+
+# aliases
+
+alias cat="bat"
+alias ls='exa -lah'
+alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"
+
+alias cth="nmcli connection up HomeVPN --ask"
+alias dfh="nmcli connection down HomeVPN"
 
 gita() {
     git add .
@@ -12,24 +30,31 @@ gita() {
     git push
 }
 
-v() {
-    nvim $1
-}
 
-# for my sway config
-alias idea="_JAVA_AWT_WM_NONREPARENTING=1 ~/.local/bin/idea &"
-alias phpstorm="_JAVA_AWT_WM_NONREPARENTING=1 ~/.local/bin/phpstorm &"
+# PATH exports
 
-alias cat="batcat"
+export PATH="$PATH/home/fabiancodes/tools/lua-language-server/bin/Linux:$PATH"
+export PATH="$PATH:/home/fabiancodes/.local/bin"
+export PATH="$PATH:/home/fabian/.local/bin"
 
-CASE_SENSITIVE="true"
 
-plugins=(git zsh-autosuggestions)
+# opam configuration
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+[[ ! -r /home/fabian/.opam/opam-init/init.zsh ]] || source /home/fabian/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+export LC_ALL=de_DE.UTF-8
+export LANG=de_DE.UTF-8
+
+
+# vi mode
+
+source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+
+
+# autocompletion
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#76b5c5,underline'
 
 function my_init() {
@@ -37,26 +62,35 @@ function my_init() {
 }
 zvm_after_init_commands+=(my_init)
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+CASE_SENSITIVE="true"
 
-export PATH="$PATH:/home/fabiancodes/.spicetify"
-export PATH="$PATH/home/fabiancodes/tools/lua-language-server/bin/Linux:$PATH"
-export PATH="$PATH:/home/fabiancodes/.local/bin"
-export PATH="$PATH:/home/fabian/.local/bin"
 
-alias ls='exa -lah'
-alias ..='cd ..'
-#alias vim='nvim'
-alias vi='nvim'
+# ps
 
-alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"
+# (changed) from: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/afowler.zsh-theme
 
-alias cth="nmcli connection up HomeVPN --ask"
-alias dfh="nmcli connection down HomeVPN"
+PROMPT='%m %B%F{blue}:: %b%F{blue}%3~%F{blue} »%f%b '
 
-# opam configuration
-[[ ! -r /home/fabian/.opam/opam-init/init.zsh ]] || source /home/fabian/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
+ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
-export LC_ALL=de_DE.UTF-8
-export LANG=de_DE.UTF-8
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg[magenta]%}hg:‹%{$fg[yellow]%}"
+ZSH_THEME_HG_PROMPT_SUFFIX="%{$fg[magenta]%}› %{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY=" %{$fg[red]%}✗"
+ZSH_THEME_HG_PROMPT_CLEAN=""
+
+
+# multiple dots
+
+# from: https://github.com/momo-lab/zsh-replace-multiple-dots/blob/master/replace-multiple-dots.plugin.zsh
+
+function replace_multiple_dots() {
+	local dots=$LBUFFER[-3,-1]
+	if [[ $dots =~ "^[ //\"']?\.\.$" ]]; then
+		LBUFFER=$LBUFFER[1,-3]'../.'
+	fi
+	zle self-insert
+}
+
+zle -N replace_multiple_dots
+bindkey "." replace_multiple_dots
