@@ -17,20 +17,29 @@ c.tabs.background = True
 c.tabs.select_on_remove = "prev"
 c.tabs.new_position.unrelated = "next"
 c.tabs.min_width = 150
-c.tabs.position = "top"
+c.tabs.position = "bottom"
+
+c.statusbar.position = "top"
 
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/downloads"
 
-c.hints.border = "11pt TerminessTTF Nerd Font"
-c.fonts.hints = "11pt TerminessTTF Nerd Font"
-c.fonts.statusbar = "11pt TerminessTTF Nerd Font"
-c.fonts.downloads = "11pt TerminessTTF Nerd Font"
-c.fonts.contextmenu = "11pt TerminessTTF Nerd Font"
-c.fonts.tabs.selected = "11pt TerminessTTF Nerd Font"
-c.fonts.tabs.unselected = "11pt TerminessTTF Nerd Font"
-c.fonts.completion.entry =  "11pt TerminessTTF Nerd Font"
-c.fonts.completion.category = "11pt TerminessTTF Nerd Font"
+font = "11pt TerminessTTF Nerd Font"
+
+c.hints.border = font
+c.fonts.hints = font
+c.fonts.statusbar = font
+c.fonts.downloads = font
+c.fonts.contextmenu = font
+c.fonts.tabs.selected = font
+c.fonts.tabs.unselected = font
+c.fonts.completion.entry =  font
+c.fonts.completion.category = font
+
+# mappings
+config.bind('<Ctrl-j>', 'tab-next', mode='command')
+config.bind('X', 'hint links spawn mpv {hint-url}', mode='normal')
+
 
 # colorscheme
 # dracula

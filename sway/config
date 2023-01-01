@@ -73,8 +73,8 @@ bindsym $mod+Shift+Return exec $browser
 bindsym $mod+d exec $menu
 bindsym Control+Shift+l exec $lockman
 
-bindsym $mod+Shift+p exec --no-startup-id passmenu --type 
-bindsym $mod+Shift+o exec --no-startup-id otpmenu --type 
+bindsym $mod+Shift+p exec --no-startup-id pwmenu
+bindsym $mod+Shift+o exec --no-startup-id otpmenu
 
 bindswitch --reload --locked lid:on exec $lockman
 
