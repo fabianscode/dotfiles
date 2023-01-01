@@ -1,6 +1,6 @@
 #!/bin/sh
 
-read -p "This script will delete your existing configuration files. This includes sway, nvim, waybar and alacritty. Would you like to continue? (y/N)?" CONT
+read -p "This script will delete your existing configuration files. Would you like to continue? (y/N)?" CONT
 if [ "$CONT" = "y" ]; then
     echo "Deleting existing files...";
 
@@ -14,6 +14,7 @@ if [ "$CONT" = "y" ]; then
     rm -r ~/.config/gtk-3.0;
     rm -r ~/.config/rofi;
     rm -r ~/.config/gdb
+	rm -r ~/.config/qutebrowser
     rm ~/.zshrc
     rm ~/.zshenv
 
@@ -27,6 +28,7 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/gtk-3.0 ~/.config/gtk-3.0;
     ln -s ${PWD}/rofi ~/.config/rofi;
     ln -s ${PWD}/gdb ~/.config/gdb;
+    ln -s ${PWD}/qutebrowser ~/.config/qutebrowser;
     ln -s ${PWD}/zsh/zshrc ~/.zshrc
     ln -s ${PWD}/zsh/zshenv ~/.zshenv
 

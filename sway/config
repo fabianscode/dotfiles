@@ -7,7 +7,7 @@ set $right l
 
 set $term alacritty
 set $menu dmenu_path | dmenu-wl_run | xargs swaymsg
-set $browser google-chrome-stable
+set $browser qutebrowser
 
 set $scnshot grim -g "$(slurp -d)" - | wl-copy
 set $lockman exec bash ~/.config/sway/lockman.sh
