@@ -39,6 +39,8 @@ c.fonts.completion.category = font
 # mappings
 config.bind('<Ctrl-j>', 'tab-next', mode='command')
 config.bind('X', 'hint links spawn mpv {hint-url}', mode='normal')
+config.bind('<Ctrl-V>', 'mode-leave', mode='passthrough')
+config.bind('<Esc>', 'mode-leave', mode='passthrough')
 
 
 # colorscheme

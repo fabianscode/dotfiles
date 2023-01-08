@@ -16,6 +16,7 @@ require "user.dap"
 require "user.toggleterm"
 require "user.diffview"
 require "user.experimental"
+require "user.surround"
 
 --language servers
 require "user.lsp.language-servers"

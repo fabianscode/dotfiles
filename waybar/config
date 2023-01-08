@@ -8,7 +8,7 @@
 		"format": "<span style=\"italic\">{}</span>"
 	},
 	"custom/clock": {
-		"exec": "echo '  '$(date +'%H:%M - %d.%m.%Y')'  '",
+		"exec": "echo '    '$(date +'%H:%M - %d.%m.%Y')'  '",
 		"interval": 10,
 	},
 	"cpu": {
@@ -35,19 +35,19 @@
 		"format-icons": ["", "", "", "", ""]
 	},
 	"network": {
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected ⚠",
+		"format-wifi": "{essid} ({signalStrength}%)  ",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+		"format-linked": "{ifname} (No IP)  ",
+		"format-disconnected": "Disconnected  ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 	},
 	"pulseaudio": {
-		"format": "{volume}%   {icon} {format_source}",
+		"format": "{volume}%  {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": "{icon} {format_source}",
 		"format-muted": "{format_source}",
-		"format-source": "   {volume}%   ",
-		"format-source-muted": "",
+		"format-source": "   {volume}%    ",
+		"format-source-muted": "  ",
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",

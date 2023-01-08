@@ -20,7 +20,7 @@ require("packer").startup(function(use)
 
 
 	use "sindrets/diffview.nvim"
-
+	use "kylechui/nvim-surround"
 
 	use "nvim-treesitter/nvim-treesitter"
 	use "nvim-treesitter/nvim-treesitter-context"

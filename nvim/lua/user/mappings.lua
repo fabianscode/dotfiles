@@ -56,3 +56,6 @@ vim.keymap.set("n", "<leader>dg", ":DiffviewFileHistory <CR>", opts)
 -- change colortheme
 vim.keymap.set("n", "<leader><leader>l", ":colorscheme gruvbox | set background=light <CR>", opts)
 vim.keymap.set("n", "<leader><leader>d", ":colorscheme onedark | set background=dark <CR>", opts)
+
+-- open common files quickly
+vim.keymap.set("n", "<leader><leader>e", ":cd ~/.config/nvim <CR>", opts)

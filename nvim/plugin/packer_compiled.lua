@@ -204,6 +204,11 @@ _G.packer_plugins = {
     path = "/home/fabian/.local/share/nvim/site/pack/packer/start/nvim-lsputils",
     url = "https://github.com/RishabhRD/nvim-lsputils"
   },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/fabian/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/fabian/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
