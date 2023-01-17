@@ -2,7 +2,7 @@
 	"height": 18, 
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
+	"modules-right": ["custom/khal", "pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
 
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
@@ -69,5 +69,9 @@
 			"none": "",
 			"error": " ⚠"
 		},
+	},
+	"custom/khal": {
+		"exec": "khal list now | sed -n 2p | sed 's/ ::.*//'",
+		"interval": 60,
 	}
 }
