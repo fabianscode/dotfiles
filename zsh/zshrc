@@ -13,8 +13,9 @@ export EDITOR="nvim"
 # aliases
 
 alias cat="bat"
-alias ls='exa -lah'
+alias ls='exa -lh'
 alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"
+alias grep="rg"
 
 alias cth="nmcli connection up HomeVPN --ask"
 alias dfh="nmcli connection down HomeVPN"
@@ -30,6 +31,16 @@ gita() {
     git push
 }
 
+man() {
+	env \
+		LESS_TERMCAP_md=$'\e[1;36m' \
+		LESS_TERMCAP_me=$'\e[0m' \
+		LESS_TERMCAP_se=$'\e[0m' \
+		LESS_TERMCAP_so=$'\e[1;40;92m' \
+		LESS_TERMCAP_ue=$'\e[0m' \
+		LESS_TERMCAP_us=$'\e[1;32m' \
+			man "$@"
+}
 
 # PATH exports
 
@@ -69,7 +80,7 @@ CASE_SENSITIVE="true"
 
 # (changed) from: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/afowler.zsh-theme
 
-PROMPT='%m %B%F{blue}:: %b%F{blue}%3~%F{blue} »%f%b '
+PROMPT='%b%F{blue}%3~%F{blue} >%f%b '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"

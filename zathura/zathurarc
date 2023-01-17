@@ -11,3 +11,5 @@ map K zoom in
 map J zoom out
 
 map p print
+
+set selection-clipboard clipboard

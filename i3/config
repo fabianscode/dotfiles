@@ -3,7 +3,7 @@ gaps outer 16
 
 set $mod Mod4
 set $term alacritty
-set $browser google-chrome-stable
+set $browser qutebrowser
 
 exec "setxkbmap -layout de"
 exec "exec /home/fabian/.config/i3/xrandr-setup.sh"
@@ -102,8 +102,11 @@ bindsym $mod+i exec $term -e gotop
 bindsym $mod+Shift+p exec --no-startup-id passmenu --type
 bindsym $mod+Shift+o exec --no-startup-id otpmenu
 
-bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
+
+bindsym $mod+Shift+c exec "bluetoothctl connect 14:3F:A6:18:F9:70"
+bindsym $mod+Shift+u exec "bluetoothctl disconnect"
+
 
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
