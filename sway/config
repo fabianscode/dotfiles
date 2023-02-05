@@ -43,7 +43,7 @@ input type:touchpad {
 }
 
 output * {
-    bg ~/documents/dotfiles/wallpapers/other/stockholm.jpg fill
+    bg ~/documents/dotfiles/wallpapers/other/night.jpg fill
     scale 1.7
 }
 
