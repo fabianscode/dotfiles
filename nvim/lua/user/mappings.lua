@@ -18,7 +18,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --dap
-vim.keymap.set("n", "<C-b>", ":PBToggleBreakpoint<CR>", opts)
+vim.keymap.set("n", "<leader><leader>b", ":PBToggleBreakpoint<CR>", opts)
 vim.keymap.set("n", "<C-c>", ":lua require'dap'.continue()<CR>", opts)
 vim.keymap.set("n", "<C-o>", ":lua require'dap'.step_over()<CR>", opts)
 vim.keymap.set("n", "<C-i>", ":lua require'dap'.step_into()<CR>", opts)
