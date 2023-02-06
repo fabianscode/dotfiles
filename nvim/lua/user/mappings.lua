@@ -59,3 +59,8 @@ vim.keymap.set("n", "<leader><leader>d", ":colorscheme onedark | set background=
 
 -- open common files quickly
 vim.keymap.set("n", "<leader><leader>e", ":cd ~/.config/nvim <CR>", opts)
+
+
+vim.keymap.set("n", "gd", ":Glance definitions<CR>", opts)
+vim.keymap.set("n", "gr", ":Glance references<CR>", opts)
+vim.keymap.set("n", "gi", ":Glance implementations<CR>", opts)
