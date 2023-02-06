@@ -80,7 +80,7 @@ CASE_SENSITIVE="true"
 
 # (changed) from: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/afowler.zsh-theme
 
-PROMPT='%b%F{blue}%3~%F{blue} >%f%b '
+PROMPT='%b%F{blue}%3~%F{blue} #%f%b '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
