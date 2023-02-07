@@ -11,6 +11,4 @@ PASS=`find * -name '*.gpg' | sed s/\.gpg// | "$dmenu" -l 10`
 PW=`pass show "$PASS" | { read -r pass; printf %s "$pass"; }`
 
 wl-copy $PW
-wtype $(basename $PASS)
-wtype -k Tab
 wtype $PW

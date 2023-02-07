@@ -62,6 +62,7 @@ export LANG=de_DE.UTF-8
 source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
+#bindkey -v
 
 # autocompletion
 
@@ -105,3 +106,4 @@ function replace_multiple_dots() {
 
 zle -N replace_multiple_dots
 bindkey "." replace_multiple_dots
+
