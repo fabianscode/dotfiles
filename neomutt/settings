@@ -1,0 +1,18 @@
+# vim: filetype=muttrc
+
+set editor = "nvim"
+set my_name = "Fabian Specht"
+
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+set mailcap_path = ~/.config/neomutt/mailcap
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+
+set askcc
+set timeout=10

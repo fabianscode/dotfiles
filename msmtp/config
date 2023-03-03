@@ -1,0 +1,26 @@
+account contact@fabiancodes.de
+host mail.fabiancodes.de
+port 465
+from contact@fabiancodes.de
+user contact@fabiancodes.de
+passwordeval "cat ~/random/contact@fabiancodes.de"
+
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fabian/.cache/msmtp/msmtp.log
+tls_starttls off
+
+
+account dieter@fabiancodes.de
+host mail.fabiancodes.de
+port 465
+from dieter@fabiancodes.de
+user dieter@fabiancodes.de
+passwordeval "cat ~/random/dieter@fabiancodes.de"
+
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fabian/.cache/msmtp/msmtp.log
+tls_starttls off
