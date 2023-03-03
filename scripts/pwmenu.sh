@@ -8,9 +8,7 @@ cd $PASSWORD_STORE_DIR
 PASS=`find * -name '*.gpg' | sed s/\.gpg// | "$dmenu" -l 10`
 [[ -n $PASS ]] || exit
 
-PW=`pass show $PASS | { read -r pass; printf %s "$pass"; }`
+PW=`pass show "$PASS" | { read -r pass; printf %s "$pass"; }`
 
 wl-copy $PW
-wtype $(basename $PASS)
-wtype -k Tab
 wtype $PW

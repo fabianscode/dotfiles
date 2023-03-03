@@ -71,7 +71,7 @@
 		},
 	},
 	"custom/khal": {
-		"exec": "khal list now | sed -n 2p | sed 's/ ::.*//'",
+		"exec": "LIST=$(khal list now | sed -n 2p | sed 's/ ::.*//'); echo ${LIST//[^[:ascii:][öäüÖÄÜß]/}",
 		"interval": 60,
 	}
 }

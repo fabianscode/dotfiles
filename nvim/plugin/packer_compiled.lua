@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/fabian/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["glance.nvim"] = {
+    loaded = true,
+    path = "/home/fabian/.local/share/nvim/site/pack/packer/start/glance.nvim",
+    url = "https://github.com/dnlhc/glance.nvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/home/fabian/.local/share/nvim/site/pack/packer/start/goyo.vim",
