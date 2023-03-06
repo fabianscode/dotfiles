@@ -5,4 +5,3 @@ source ~/.config/neomutt/colors
 source ~/.config/neomutt/mappings
 
 source ~/.config/neomutt/accounts/main
-#source ~/.config/neomutt/accounts/junk

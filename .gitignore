@@ -1,3 +1,5 @@
 .ccls
 .ccls-cache
 /.ccls-cache
+error.log
+plugin/

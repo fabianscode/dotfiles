@@ -1,5 +1,7 @@
 # vim: filetype=muttrc
 
+unmailboxes *
+
 set mbox_type 		= Maildir
 set folder 			= "~/.local/share/mail/contact@fabiancodes.de"
 
@@ -19,4 +21,3 @@ mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
 
 macro index S "<shell-escape>mbsync -V contact@fabiancodes.de<enter><shell-escape>notmuch new<enter>" "sync email"
 
-macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"

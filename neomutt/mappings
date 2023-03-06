@@ -29,3 +29,9 @@ bind index j next-entry
 bind index k previous-entry
 bind pager j next-line
 bind pager k previous-line
+
+bind index l display-message
+bind pager,attach h exit
+
+macro index,pager \Cm '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/main<enter><change-folder>!<enter>;<check-stats>' "switch to main"
+macro index,pager \Cj '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/junk<enter><change-folder>!<enter>;<check-stats>' "switch to junk"

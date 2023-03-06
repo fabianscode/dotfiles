@@ -1,5 +1,7 @@
 # vim: filetype=muttrc
 
+unmailboxes *
+
 set mbox_type 		= Maildir
 set folder 			= "~/.local/share/mail/dieter@fabiancodes.de"
 
