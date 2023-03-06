@@ -1,9 +1,7 @@
 #!/bin/sh
 
-read -p "This script will delete your existing configuration files. Would you like to continue? (y/N)?" CONT
+read -p "This script will delete your existing configuration files. Would you like to continue? (y/N)? " CONT
 if [ "$CONT" = "y" ]; then
-    echo "Deleting existing files...";
-
     rm -r ~/.config/sway;
     rm -r ~/.config/alacritty;
     rm -r ~/.config/waybar;
@@ -15,8 +13,18 @@ if [ "$CONT" = "y" ]; then
     rm -r ~/.config/rofi;
     rm -r ~/.config/gdb
 	rm -r ~/.config/qutebrowser
+	rm -r ~/.config/mpd
+	rm -r ~/.config/khal
+	rm -r ~/.config/vdirsyncer
+	rm -r ~/.config/neomutt
+	rm -r ~/.config/msmtp
+	rm -r ~/.config/ncmpcpp
+	rm -r ~/.config/mimeapps.list
+	rm -r ~/.config/user-dirs.dirs
+
     rm ~/.zshrc
     rm ~/.zshenv
+    rm ~/.mbsyncrc
 
     ln -s ${PWD}/sway ~/.config/sway;
     ln -s ${PWD}/alacritty ~/.config/alacritty;
@@ -29,10 +37,20 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/rofi ~/.config/rofi;
     ln -s ${PWD}/gdb ~/.config/gdb;
     ln -s ${PWD}/qutebrowser ~/.config/qutebrowser;
+    ln -s ${PWD}/mpd ~/.config/mpd;
+    ln -s ${PWD}/khal ~/.config/khal;
+    ln -s ${PWD}/vdirsyncer ~/.config/vdirsyncer;
+    ln -s ${PWD}/neomutt ~/.config/neomutt;
+    ln -s ${PWD}/msmtp ~/.config/msmtp;
+    ln -s ${PWD}/ncmpcpp ~/.config/ncmpcpp;
+    ln -s ${PWD}/mime/mimeapps.list ~/.config/mimeapps.list;
+    ln -s ${PWD}/user-dirs/user-dirs.dirs ~/.config/user-dirs.dirs;
+
     ln -s ${PWD}/zsh/zshrc ~/.zshrc
     ln -s ${PWD}/zsh/zshenv ~/.zshenv
+    ln -s ${PWD}/mbsync/mbsyncrc ~/.mbsyncrc
 
-    echo "Existing files deleted.";
+    echo "Updated files";
 else
     echo "Cancelled.";
 fi

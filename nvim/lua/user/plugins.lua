@@ -49,7 +49,6 @@ require("packer").startup(function(use)
 	use "RishabhRD/nvim-lsputils"
 	use "simrat39/rust-tools.nvim"
 	use "williamboman/nvim-lsp-installer"
-	use "dnlhc/glance.nvim"
 	--use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
 

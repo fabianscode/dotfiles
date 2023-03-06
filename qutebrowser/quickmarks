@@ -1,6 +1,6 @@
 Searx https://www.searx.fabiancodes.de/search
 Syncthing http://127.0.0.1:8384/#settings-gui
-SCP https://www.servercontrolpanel.de/SCP/Home?site_key=qveWWT3qRAm5yeh7cqXqXAWk3ucbPuxx#
+SCP https://www.servercontrolpanel.de/SCP/Home
 Bafög https://www.bafoeg-digital.de/ams/BAFOEG
 Tutor-Folder https://tumde-my.sharepoint.com/personal/jan_wagener_tum_de/_layouts/15/guestaccess.aspx?share=Eg2s2yum3txClonBrl6BDksBcN37mOL6U3dptLoVVAer8A
 GDB https://db.in.tum.de/teaching/ws2223/grundlagen/?lang=en
@@ -11,6 +11,4 @@ Scoreboard ITSec https://scoreboard.sec.in.tum.de/scoreboard
 Zulip https://zulip.in.tum.de/#
 Nextcloud https://www.nc.fabiancodes.de/apps/files/?dir=/&fileid=5
 WhatsApp https://web.whatsapp.com/
-Mailserver Setup https://www.libe.net/en-docker-mailserver#mail-server-commissioning
 Moodle https://www.moodle.tum.de/my/
-Docker Mailserver Setup https://www.davd.io/byecloud-building-a-mailserver-with-modern-webmail/

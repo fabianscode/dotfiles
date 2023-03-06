@@ -1,7 +1,6 @@
 env:
   TERM: xterm-256color
 
-## Terminal window settings
 window:
   opacity: 0.8
   dimensions:
@@ -9,8 +8,8 @@ window:
     lines: 22
 
   padding:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
 
   decorations: full
   startup_mode: Windowed
@@ -36,23 +35,22 @@ font:
 
 live_config_reload: true
 
-# Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
 colors:
   primary:
     background: "#282c34"
     foreground: "#abb2bf"
   cursor:
     text:       CellBackground
-    cursor:     "#528bff" # syntax-cursor-color
+    cursor:     "#528bff"
   selection:
     text:       CellForeground
-    background: "#3e4451" # syntax-selection-color
+    background: "#3e4451"
   normal:
-    black:      "#5c6370" # mono-3
-    red:        "#e06c75" # red 1
+    black:      "#282c34"
+    red:        "#e06c75"
     green:      "#98c379"
-    yellow:     "#e5c07b" # orange 2
+    yellow:     "#e5c07b"
     blue:       "#61afef"
     magenta:    "#c678dd"
     cyan:       "#56b6c2"
-    white:      "#828997" # mono-2
+    white:      "#92a9a7"

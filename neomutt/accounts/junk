@@ -1,0 +1,20 @@
+# vim: filetype=muttrc
+
+unmailboxes *
+
+set mbox_type 		= Maildir
+set folder 			= "~/.local/share/mail/dieter@fabiancodes.de"
+
+set sendmail 		= "msmtp -a dieter@fabiancodes.de"
+
+set spoolfile		= "+INBOX"
+set record 			= "+Sent"
+set trash 			= "+Trash"
+set postponed 		= "+Drafts"
+
+set realname 		= "Dieter"
+set from 			= "dieter@fabiancodes.de"
+
+mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
+
+macro index S "<shell-escape>mbsync -V dieter@fabiancodes.de<enter>" "sync email"

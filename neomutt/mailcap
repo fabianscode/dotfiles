@@ -1,0 +1,10 @@
+text/plain; nvim %s
+text/html; lynx %s
+
+application/pdf; /usr/bin/zathura %s &
+
+image/*; /usr/bin/sxiv %s &
+
+audio/*; mpv %s &
+
+video/*; setsid mpv --quiet %s &; copiousoutput

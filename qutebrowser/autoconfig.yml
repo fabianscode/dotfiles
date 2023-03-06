@@ -8,3 +8,5 @@ config_version: 2
 settings:
   content.notifications.enabled:
     https://www.nc.fabiancodes.de: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
