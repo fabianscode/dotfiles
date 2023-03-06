@@ -3,14 +3,14 @@ env:
 
 ## Terminal window settings
 window:
-  opacity: 1.0
+  opacity: 0.8
   dimensions:
     columns: 84
     lines: 22
 
   padding:
-    x: 8
-    y: 8
+    x: 0
+    y: 0
 
   decorations: full
   startup_mode: Windowed
@@ -29,6 +29,7 @@ cursor:
 font:
   normal:
     family: TerminessTTF Nerd Font
+    #family: InconsolataGo Nerd Font
     style: Regular
 
   size: 11

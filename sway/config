@@ -10,6 +10,7 @@ set $menu dmenu_path | dmenu-wl_run | xargs swaymsg
 set $browser qutebrowser
 
 set $scnshot grim -g "$(slurp -d)" - | wl-copy
+set $scnshot-edit grim -g "$(slurp -d)" - | swappy -f -
 set $lockman exec bash ~/.config/sway/lockman.sh
 
 # autostart
@@ -43,7 +44,7 @@ input type:touchpad {
 }
 
 output * {
-    bg ~/documents/dotfiles/wallpapers/other/night.jpg fill
+    bg ~/documents/dotfiles/wallpapers/other/wallpaper.jpg fill
     scale 1.7
 }
 
@@ -68,6 +69,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+m exec wl-mirror -r '0,0 1327x884'
 
 bindsym $mod+p exec $scnshot
+bindsym $mod+Control+p exec $scnshot-edit
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $browser 
 bindsym $mod+d exec $menu
