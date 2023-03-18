@@ -1,17 +1,18 @@
 # general
-
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=1000
 
 
-# default apps
+# set colortheme
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors.sh
 
+# default apps
 export EDITOR="nvim"
 
 
 # aliases
-
 alias cat="bat"
 alias ls='exa -lh'
 alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"
@@ -20,16 +21,6 @@ alias grep="rg"
 alias cth="nmcli connection up HomeVPN --ask"
 alias dfh="nmcli connection down HomeVPN"
 
-gita() {
-    git add .
-    if [ $1 != "" ] # or better, if [ -n "$1" ]
-    then
-        git commit -m $1
-    else
-        git commit -m update
-    fi
-    git push
-}
 
 man() {
 	env \
@@ -67,7 +58,6 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 # autocompletion
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#76b5c5,underline'
 
 function my_init() {
 	bindkey '^ ' autosuggest-accept
@@ -81,7 +71,7 @@ CASE_SENSITIVE="true"
 
 # (changed) from: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/afowler.zsh-theme
 
-PROMPT='%b%F{blue}%3~%F{blue} #%f%b '
+PROMPT='%b%F{red}%3~%F{red} #%f%b '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"

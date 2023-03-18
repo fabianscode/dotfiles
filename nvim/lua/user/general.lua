@@ -8,7 +8,7 @@ o.relativenumber = true
 o.splitbelow = true
 o.splitright = true
 
-o.termguicolors = true
+--o.termguicolors = true
 o.updatetime = 100
 o.encoding = "utf-8"
 o.cmdheight = 1

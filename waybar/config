@@ -2,13 +2,13 @@
 	"height": 18, 
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": [],
-	"modules-right": ["custom/khal", "pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
+	"modules-right": ["custom/mail", "custom/khal", "pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
 
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
 	},
 	"custom/clock": {
-		"exec": "echo '    '$(date +'%H:%M - %d.%m.%Y')'  '",
+		"exec": "echo ''$(date +'%H:%M')''",
 		"interval": 10,
 	},
 	"cpu": {
@@ -35,18 +35,18 @@
 		"format-icons": ["", "", "", "", ""]
 	},
 	"network": {
-		"format-wifi": "{essid} ({signalStrength}%)  ",
+		"format-wifi": "{signalStrength}% ",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
 		"format-linked": "{ifname} (No IP)  ",
 		"format-disconnected": "Disconnected  ⚠",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"format-alt": "{ifname}: {ipaddr}/{cidr} - {essid}",
 	},
 	"pulseaudio": {
-		"format": "{volume}%  {icon} {format_source}",
+		"format": "  {volume}% {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": "{icon} {format_source}",
 		"format-muted": "{format_source}",
-		"format-source": "   {volume}%    ",
+		"format-source": "   {volume}%   ",
 		"format-source-muted": "  ",
 		"format-icons": {
 			"headphone": "",
@@ -59,19 +59,14 @@
 		},
 		"on-click": "pavucontrol",
 	},
-	"custom/nmvpn": {
-		"format": "  {} {icon}",
-		"return-type": "json",
-		"exec": "~/go/bin/waybar-nmvpn",
-		"format-icons": {
-			"connected": " ",
-			"disconnected": " ",
-			"none": "",
-			"error": " ⚠"
-		},
-	},
 	"custom/khal": {
 		"exec": "LIST=$(khal list now | sed -n 2p | sed 's/ ::.*//'); echo ${LIST//[^[:ascii:][öäüÖÄÜß]/}",
+		"on-click": "alacritty --hold -e ikhal",
+		"interval": 60,
+	},
+	"custom/mail": {
+		"exec": "echo $(find $HOME/.local/share/mail/*/INBOX/new/ -type f | wc -l) new mail",
+		"on-click": "alacritty --hold -e neomutt",
 		"interval": 60,
 	}
 }

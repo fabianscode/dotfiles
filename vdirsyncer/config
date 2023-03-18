@@ -2,21 +2,21 @@
 status_path = "~/.vdirsyncer/status/"
 
 # CALDAV
-[pair nextcloud_calendar]
-a = "nextcloud_calendar_local"
-b = "nextcloud_calendar_remote"
+[pair baikal_calendar]
+a = "baikal_calendar_local"
+b = "baikal_calendar_remote"
 collections = ["from a", "from b"]
 
 # Calendars also have a color property
 metadata = ["displayname", "color"]
 
-[storage nextcloud_calendar_local]
+[storage baikal_calendar_local]
 type = "filesystem"
 path = "~/.calendars/"
 fileext = ".ics"
 
-[storage nextcloud_calendar_remote]
+[storage baikal_calendar_remote]
 type = "caldav"
-url = "https://www.nc.fabiancodes.de"
-username.fetch = ["command", "cat", "~/random/nextcloud_un"]
-password.fetch = ["command", "cat", "~/random/nextcloud_pw"]
+url = "https://calendar.fabiancodes.de/dav.php"
+username.fetch = ["command", "cat", "~/random/baikal_un"]
+password.fetch = ["command", "cat", "~/random/baikal_pw"]

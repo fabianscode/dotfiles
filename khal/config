@@ -12,7 +12,7 @@ datetimeformat 							= %d/%m/%Y %H:%M
 longdatetimeformat 						= %d/%m/%Y %H:%M
 
 [default]
-default_calendar 						= Personal
+default_calendar 						= personal
 highlight_event_days 					= True
 
 [highlight_days]

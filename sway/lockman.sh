@@ -6,12 +6,12 @@ swayidle \
 
 swaylock \
     --ignore-empty-password \
+	--screenshots \
     --daemonize \
-    --fade-in 0.4 \
+    --fade-in 1.0 \
     --indicator \
     --clock \
     --datestr %d/%m/%Y \
-    --screenshots \
     --indicator-caps-lock \
     --bs-hl-color 61afefcc \
     --caps-lock-bs-hl-color 458588cc \
@@ -41,7 +41,7 @@ swaylock \
     --text-caps-lock-color fbf1c7 \
     --text-ver-color fbf1c7 \
     --text-wrong-color fbf1c7 \
-    --effect-blur 2x5 \
+    --effect-blur 2x8 \
     --effect-vignette 0.5:0.5
 
 kill %%

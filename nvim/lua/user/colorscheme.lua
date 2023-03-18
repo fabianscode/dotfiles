@@ -8,5 +8,5 @@
 -- for normal use
 
 vim.cmd [[
-	colorscheme onedark
+	colorscheme wal
 ]]

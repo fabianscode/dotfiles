@@ -1,3 +1,5 @@
+@import url('/home/fabian/.cache/wal/colors-waybar.css');
+
 * {
 	border: none;
 	border-radius: 0;
@@ -7,9 +9,9 @@
 }
 
 window#waybar {
-	background-color: #282c34;
+	background: @background;
+    color: @forebackground;
 	border-bottom: 0px;
-	color: #61afef;
 	transition-property: background-color;
 	transition-duration: .5s;
 }
@@ -21,68 +23,55 @@ window#waybar.hidden {
 #workspaces button {
     padding: 0 5px;
 	background-color: transparent;
-	color: #61afef;
+	color: @foreground;
 	box-shadow: inset 0 -2px transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
 	background: rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 -2px #61afef;
+	box-shadow: inset 0 -2px @foreground;
 }
 
 #workspaces button.focused {
 	background-color: transparent;
-	box-shadow: inset 0 -2px #61afef;
+	box-shadow: inset 0 -2px @foreground;
 }
 
 #mode {
-	background-color: #64727D;
+	background-color: @foreground;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#mpd {
-	padding: 0 10px;
-	margin: 0 4px;
-	color: #61afef;
+#network {
+    color: @foreground;
+    padding: 0px 12px 0px 12px;
 }
+
+#backlight {
+    color: @foreground;
+    padding: 0px 12px 0px 12px;
+}
+
+#mpd {
+    padding: 0px 12px 0px 12px;
+	color: @foreground;
+}
+
 #window,
+
 #workspaces {
 	margin: 0 0px;
 }
 
-#custom-clock,
-#clock {
-	background-color: transparent;
-}
-
 #battery {
 	background-color: transparent;
-	color: #61afef;
+    padding: 0px 12px 0px 12px;
+	color: @foreground;
 }
 
 label:focus {
 	background-color: #000000;
 }
-
-#cpu {
-	background-color: transparent;
-}
-
-#memory {
-	background-color: transparent;
-}
-
 
 #backlight {
 	background-color: transparent;
@@ -94,19 +83,27 @@ label:focus {
 
 #pulseaudio {
 	background-color: transparent;
-	color: #61afef;
+	color: @foreground;
+    padding: 0px 12px 0px 12px;
 }
 
 #pulseaudio.muted {
 	background-color: transparent;
-	color: #61afef;
+	color: @foreground;
+    padding: 0px 12px 0px 12px;
 }
 
-#temperature {
-	background-color: #f0932b;
+#custom-mail {
+    padding: 0px 12px 0px 12px;
+	color: @foreground;
 }
 
-#tray {
-	background-color: transparent;
+#custom-khal {
+    padding: 0px 12px 0px 12px;
+	color: @foreground;
 }
 
+#custom-clock {
+    padding: 0px 16px 0px 24px;
+	color: @foreground;
+}

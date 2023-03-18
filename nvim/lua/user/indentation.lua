@@ -35,11 +35,11 @@ vim.g.indent_blankline_context_patterns = {
 
 vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
 
-vim.cmd[[
-	highlight IndentBlanklineContextChar guifg=#61AFEF gui=nocombine
-	hi CursorLineNr guifg=#61AFEF
-	hi CursorLineNR cterm=bold
-	set cursorline
-	set cursorlineopt=number
-]]
+--vim.cmd[[
+--	hi CursorLineNR cterm=bold
+--	set cursorline
+--	set cursorlineopt=number
+--]]
+--hi CursorLineNr guifg=#61AFEF
+--highlight IndentBlanklineContextChar guifg=#61AFEF gui=nocombine
 

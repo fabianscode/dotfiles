@@ -1,6 +1,9 @@
 #!/bin/sh
 
-DISPLAY=:0 notify-send 'I am alive!'
+
+if [ -r "$HOME/.dbus/Xdbus" ]; then
+  . "$HOME/.dbus/Xdbus"
+fi
 
 count_contact_before=$(find $HOME/.local/share/mail/contact@fabiancodes.de/INBOX/new/ -type f | wc -l)
 

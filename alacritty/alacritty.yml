@@ -2,7 +2,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.8
+  opacity: 0.9
   dimensions:
     columns: 84
     lines: 22
@@ -28,7 +28,6 @@ cursor:
 font:
   normal:
     family: TerminessTTF Nerd Font
-    #family: InconsolataGo Nerd Font
     style: Regular
 
   size: 11
