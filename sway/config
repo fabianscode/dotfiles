@@ -55,7 +55,7 @@ input type:touchpad {
 }
 
 output * background 							$wallpaper fill
-output * 										scale 1.7
+output * 										scale 1.0
 
 
 mouse_warping 									none
@@ -88,8 +88,8 @@ bindsym $mod+Shift+Return 						exec $browser
 bindsym $mod+d 									exec $menu
 bindsym Control+Shift+l 						exec $lockman
 
-bindsym $mod+Shift+p 							exec --no-startup-id pwmenu
-bindsym $mod+Shift+o 							exec --no-startup-id otpmenu
+bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
+bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec alacritty --hold -e ikhal
