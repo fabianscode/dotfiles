@@ -3,9 +3,9 @@
 unmailboxes *
 
 set mbox_type 		= Maildir
-set folder 			= "~/.local/share/mail/dieter@fabiancodes.de"
+set folder 			= "~/.local/share/mail/dieter@fabianspecht.xyz"
 
-set sendmail 		= "msmtp -a dieter@fabiancodes.de"
+set sendmail 		= "msmtp -a dieter@fabianspecht.xyz"
 
 set spoolfile		= "+INBOX"
 set record 			= "+Sent"
@@ -13,8 +13,8 @@ set trash 			= "+Trash"
 set postponed 		= "+Drafts"
 
 set realname 		= "Dieter"
-set from 			= "dieter@fabiancodes.de"
+set from 			= "dieter@fabianspecht.xyz"
 
 mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
 
-macro index S "<shell-escape>mbsync -V dieter@fabiancodes.de<enter>" "sync email"
+macro index S "<shell-escape>mbsync -V dieter@fabianspecht.xyz<enter>" "sync email"

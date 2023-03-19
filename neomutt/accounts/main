@@ -3,9 +3,9 @@
 unmailboxes *
 
 set mbox_type 		= Maildir
-set folder 			= "~/.local/share/mail/contact@fabiancodes.de"
+set folder 			= "~/.local/share/mail/contact@fabianspecht.xyz"
 
-set sendmail 		= "msmtp -a contact@fabiancodes.de"
+set sendmail 		= "msmtp -a contact@fabianspecht.xyz"
 
 set spoolfile		= "+INBOX"
 set record 			= "+Sent"
@@ -13,11 +13,11 @@ set trash 			= "+Trash"
 set postponed 		= "+Drafts"
 
 set realname 		= "Fabian Specht"
-set from 			= "contact@fabiancodes.de"
+set from 			= "contact@fabianspecht.xyz"
 
 set signature		= "~/.config/neomutt/signature"
 
 mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
 
-macro index S "<shell-escape>mbsync -V contact@fabiancodes.de<enter><shell-escape>notmuch new<enter>" "sync email"
+macro index S "<shell-escape>mbsync -V contact@fabianspecht.xyz<enter><shell-escape>notmuch new<enter>" "sync email"
 

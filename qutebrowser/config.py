@@ -7,10 +7,10 @@ c = c
 config.load_autoconfig(False)
 
 c.url.searchengines = {
-    "DEFAULT":  "https://www.searx.fabiancodes.de?q={}",
+    "DEFAULT":  "https://search.fabianspecht.xyz?q={}",
 }
 
-c.url.start_pages = ["https://www.searx.fabiancodes.de"]
+c.url.start_pages = ["https://search.fabianspecht.xyz"]
 
 c.auto_save.session = True
 c.session.lazy_restore = True

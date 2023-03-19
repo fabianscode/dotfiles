@@ -1,21 +1,21 @@
-IMAPStore contact@fabiancodes.de-remote
-Host mail.fabiancodes.de
+IMAPStore contact@fabianspecht.xyz-remote
+Host mail.fabianspecht.xyz
 Port 993
-User contact@fabiancodes.de
-PassCmd "cat ~/random/contact@fabiancodes.de"
+User contact@fabianspecht.xyz
+PassCmd "cat ~/random/contact@fabianspecht.xyz"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore contact@fabiancodes.de-local
+MaildirStore contact@fabianspecht.xyz-local
 Subfolders Verbatim
-Path /home/fabian/.local/share/mail/contact@fabiancodes.de/
-Inbox /home/fabian/.local/share/mail/contact@fabiancodes.de/INBOX
+Path /home/fabian/.local/share/mail/contact@fabianspecht.xyz/
+Inbox /home/fabian/.local/share/mail/contact@fabianspecht.xyz/INBOX
 
-Channel contact@fabiancodes.de
+Channel contact@fabianspecht.xyz
 Expunge Both
-Far :contact@fabiancodes.de-remote:
-Near :contact@fabiancodes.de-local:
+Far :contact@fabianspecht.xyz-remote:
+Near :contact@fabianspecht.xyz-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -24,24 +24,24 @@ ExpireUnread no
 # End profile
 
 
-IMAPStore dieter@fabiancodes.de-remote
-Host mail.fabiancodes.de
+IMAPStore dieter@fabianspecht.xyz-remote
+Host mail.fabianspecht.xyz
 Port 993
-User dieter@fabiancodes.de
-PassCmd "cat ~/random/dieter@fabiancodes.de"
+User dieter@fabianspecht.xyz
+PassCmd "cat ~/random/dieter@fabianspecht.xyz"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore dieter@fabiancodes.de-local
+MaildirStore dieter@fabianspecht.xyz-local
 Subfolders Verbatim
-Path /home/fabian/.local/share/mail/dieter@fabiancodes.de/
-Inbox /home/fabian/.local/share/mail/dieter@fabiancodes.de/INBOX
+Path /home/fabian/.local/share/mail/dieter@fabianspecht.xyz/
+Inbox /home/fabian/.local/share/mail/dieter@fabianspecht.xyz/INBOX
 
-Channel dieter@fabiancodes.de
+Channel dieter@fabianspecht.xyz
 Expunge Both
-Far :dieter@fabiancodes.de-remote:
-Near :dieter@fabiancodes.de-local:
+Far :dieter@fabianspecht.xyz-remote:
+Near :dieter@fabianspecht.xyz-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *

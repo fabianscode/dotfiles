@@ -1,9 +1,9 @@
-account contact@fabiancodes.de
-host mail.fabiancodes.de
+account contact@fabianspecht.xyz
+host mail.fabianspecht.xyz
 port 465
-from contact@fabiancodes.de
-user contact@fabiancodes.de
-passwordeval "cat ~/random/contact@fabiancodes.de"
+from contact@fabianspecht.xyz
+user contact@fabianspecht.xyz
+passwordeval "cat ~/random/contact@fabianspecht.xyz"
 
 auth on
 tls on
@@ -12,12 +12,12 @@ logfile /home/fabian/.cache/msmtp/msmtp.log
 tls_starttls off
 
 
-account dieter@fabiancodes.de
-host mail.fabiancodes.de
+account dieter@fabianspecht.xyz
+host mail.fabianspecht.xyz
 port 465
-from dieter@fabiancodes.de
-user dieter@fabiancodes.de
-passwordeval "cat ~/random/dieter@fabiancodes.de"
+from dieter@fabianspecht.xyz
+user dieter@fabianspecht.xyz
+passwordeval "cat ~/random/dieter@fabianspecht.xyz"
 
 auth on
 tls on
