@@ -19,6 +19,7 @@ if [ "$CONT" = "y" ]; then
 	rm -r ~/.config/neomutt
 	rm -r ~/.config/msmtp
 	rm -r ~/.config/ncmpcpp
+	rm -r ~/.config/mako
 	rm -r ~/.config/mimeapps.list
 	rm -r ~/.config/user-dirs.dirs
 
@@ -43,6 +44,7 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/neomutt ~/.config/neomutt;
     ln -s ${PWD}/msmtp ~/.config/msmtp;
     ln -s ${PWD}/ncmpcpp ~/.config/ncmpcpp;
+    ln -s ${PWD}/mako ~/.config/mako;
     ln -s ${PWD}/mime/mimeapps.list ~/.config/mimeapps.list;
     ln -s ${PWD}/user-dirs/user-dirs.dirs ~/.config/user-dirs.dirs;
 
