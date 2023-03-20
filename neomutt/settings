@@ -16,3 +16,13 @@ set sort_re
 
 set askcc
 set timeout=10
+
+set sidebar_divider_char = ' 	░'
+set sidebar_folder_indent = yes
+set sidebar_indent_string = ' - '
+set sidebar_visible = yes
+set sidebar_width   = 40
+set sidebar_next_new_wrap = yes
+set sidebar_short_path = yes
+
+

@@ -5,19 +5,19 @@ from contact@fabianspecht.xyz
 user contact@fabianspecht.xyz
 passwordeval "cat ~/random/contact@fabianspecht.xyz"
 
-auth on
-tls on
-tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/fabian/.cache/msmtp/msmtp.log
-tls_starttls off
-
-
 account dieter@fabianspecht.xyz
 host mail.fabianspecht.xyz
 port 465
 from dieter@fabianspecht.xyz
 user dieter@fabianspecht.xyz
 passwordeval "cat ~/random/dieter@fabianspecht.xyz"
+
+account github@fabianspecht.xyz
+host mail.fabianspecht.xyz
+port 465
+from github@fabianspecht.xyz
+user github@fabianspecht.xyz
+passwordeval "cat ~/random/github@fabianspecht.xyz"
 
 auth on
 tls on

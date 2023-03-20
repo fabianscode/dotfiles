@@ -2,6 +2,8 @@
 
 source ~/.config/neomutt/settings
 source ~/.config/neomutt/colors
-source ~/.config/neomutt/mappings
+
+source ~/.config/neomutt/keys/unmap
+source ~/.config/neomutt/keys/map
 
 source ~/.config/neomutt/accounts/main
