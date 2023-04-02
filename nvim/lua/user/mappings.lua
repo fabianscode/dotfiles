@@ -22,7 +22,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<F4>", ":set hlsearch!<CR>", opts)
 
 vim.keymap.set("n", "<leader>f", ":CtrlP .<CR>")
-vim.keymap.set("n", "<leader>g", ":grep -r  .<left><left>")
+vim.keymap.set("n", "<leader>g", ":Ack ")
+vim.keymap.set("n", "<leader>e", ":Ex<CR>")
 
 
 vim.keymap.set("n", "<leader>h", require("harpoon.ui").toggle_quick_menu)

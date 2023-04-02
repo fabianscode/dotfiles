@@ -2,7 +2,7 @@
 
 -- vim.o.background = "light"
 -- vim.cmd [[
--- 	colorscheme gruvbox
+-- 	  colorscheme gruvbox
 -- ]]
 
 -- for normal use
