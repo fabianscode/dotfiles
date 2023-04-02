@@ -17,26 +17,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>z.")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
---dap
-vim.keymap.set("n", "<leader><leader>b", ":PBToggleBreakpoint<CR>", opts)
-vim.keymap.set("n", "<C-c>", ":lua require'dap'.continue()<CR>", opts)
-vim.keymap.set("n", "<C-o>", ":lua require'dap'.step_over()<CR>", opts)
-vim.keymap.set("n", "<C-i>", ":lua require'dap'.step_into()<CR>", opts)
-vim.keymap.set("n", "<C-x>", ":lua require'dap'.close()<CR>", opts)
-
-
---luasnip
-vim.keymap.set("i", "<C-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-vim.keymap.set("s", "<C-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-vim.keymap.set("i", "<C-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
-vim.keymap.set("s", "<C-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
-
 
 --general
 vim.keymap.set("n", "<F4>", ":set hlsearch!<CR>", opts)
 
-vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
-vim.keymap.set("n", "<leader>g", require("telescope.builtin").live_grep)
+vim.keymap.set("n", "<leader>f", ":CtrlP .<CR>")
+vim.keymap.set("n", "<leader>g", ":grep -r  .<left><left>")
 
 
 vim.keymap.set("n", "<leader>h", require("harpoon.ui").toggle_quick_menu)

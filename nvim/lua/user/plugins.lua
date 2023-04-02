@@ -2,19 +2,16 @@ require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 	use "lewis6991/impatient.nvim"
 
-
-	--use "ellisonleao/gruvbox.nvim"
-	--use "EdenEast/nightfox.nvim"
-	--use "folke/tokyonight.nvim"
-	--use "Mofiqul/dracula.nvim"
 	--use "navarasu/onedark.nvim"
 	use "dylanaraps/wal.vim"
 
 	use "nvim-lua/plenary.nvim"
 	use "lukas-reineke/indent-blankline.nvim"
 
-	use "nvim-telescope/telescope.nvim"
-	use "nvim-telescope/telescope-file-browser.nvim"
+	use "junegunn/fzf.vim"
+	use "pbogut/fzf-mru.vim"
+	use "ctrlpvim/ctrlp.vim"
+	use "mileszs/ack.vim"
 	use "ThePrimeagen/harpoon"
 
 	use "nvim-treesitter/nvim-treesitter"
