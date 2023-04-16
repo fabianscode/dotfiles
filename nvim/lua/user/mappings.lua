@@ -22,6 +22,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<F4>", ":set hlsearch!<CR>", opts)
 
 vim.keymap.set("n", "<leader>f", ":CtrlP .<CR>")
+vim.keymap.set("n", "<leader>r", ":CtrlPMRUFiles<CR>")
 vim.keymap.set("n", "<leader>g", ":Ack ")
 vim.keymap.set("n", "<leader>e", ":Ex<CR>")
 

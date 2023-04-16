@@ -13,13 +13,14 @@ export EDITOR="nvim"
 
 
 # aliases
-alias cat="bat"
 alias ls='exa -lh'
 alias luamake="$HOME/tools/lua-language-server/3rd/luamake/luamake"
-alias grep="rg"
 
 alias cth="nmcli connection up HomeVPN --ask"
 alias dfh="nmcli connection down HomeVPN"
+
+alias pull="rsync -avP -e ssh srv0:/var/fileserver ~ --delete"
+alias push="rsync -avP -e ssh ~/fileserver srv0:/var/ --delete"
 
 
 man() {
@@ -38,7 +39,7 @@ man() {
 export PATH="$PATH/home/fabiancodes/tools/lua-language-server/bin/Linux:$PATH"
 export PATH="$PATH:/home/fabiancodes/.local/bin"
 export PATH="$PATH:/home/fabian/.local/bin"
-
+export PATH="$PATH:/home/fabian/.cargo/bin"
 
 # opam configuration
 
@@ -97,3 +98,11 @@ function replace_multiple_dots() {
 zle -N replace_multiple_dots
 bindkey "." replace_multiple_dots
 
+if [ "$(tty)" = "/dev/tty1" ] ; then
+    export QT_QPA_PLATFORM=wayland
+    export MOZ_ENABLE_WAYLAND=1
+    export MOZ_WEBRENDER=1
+    export XDG_SESSION_TYPE=wayland
+    export XDG_CURRENT_DESKTOP=sway
+    exec sway
+fi
