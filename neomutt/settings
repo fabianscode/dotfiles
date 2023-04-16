@@ -25,4 +25,4 @@ set sidebar_width   = 40
 set sidebar_next_new_wrap = yes
 set sidebar_short_path = yes
 
-
+set query_command="khard email --parsable '%s'"

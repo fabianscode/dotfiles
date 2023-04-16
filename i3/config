@@ -5,6 +5,15 @@ set $mod Mod4
 set $term alacritty
 set $browser qutebrowser
 
+
+set_from_resource $foreground i3wm.foreground
+set_from_resource $background i3wm.background
+set_from_resource $color1 i3wm.color1
+set_from_resource $color3 i3wm.color3
+set_from_resource $color4 i3wm.color4
+set_from_resource $color7 i3wm.color7
+
+
 exec "setxkbmap -layout de"
 exec "exec /home/fabian/.config/i3/xrandr-setup.sh"
 
@@ -93,7 +102,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+Return exec $term
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -nb "$color1" -nf "$background" -sb "$background" -sf "$color1" -h 32
 bindsym $mod+Shift+Return exec --no-startup-id $browser &
 
 bindsym $mod+i exec $term -e gotop
@@ -112,11 +121,11 @@ bindsym $mod+Shift+i exec alacritty --hold -e ikhal
 bindsym $mod+Shift+w exec alacritty --class floating_weather --hold -e curl wttr.in
 
 
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# class                 	border  	background 		text 			indicator 		child_border
+client.focused 				$color1 	$background 	$foreground 	$color1 		$color1
+client.unfocused 			$color1 	$background 	$foreground 	$background 	$background
+client.focused_inactive 	$color1 	$background 	$foreground 	$background 	$background
+client.urgent 				$color1 	$background 	$foreground 	$color3 		$color3
 
 
 for_window [class=".*"] border pixel 3

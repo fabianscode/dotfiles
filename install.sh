@@ -15,6 +15,7 @@ if [ "$CONT" = "y" ]; then
 	rm -r ~/.config/qutebrowser
 	rm -r ~/.config/mpd
 	rm -r ~/.config/khal
+	rm -r ~/.config/khard
 	rm -r ~/.config/vdirsyncer
 	rm -r ~/.config/neomutt
 	rm -r ~/.config/msmtp
@@ -40,6 +41,7 @@ if [ "$CONT" = "y" ]; then
     ln -s ${PWD}/qutebrowser ~/.config/qutebrowser;
     ln -s ${PWD}/mpd ~/.config/mpd;
     ln -s ${PWD}/khal ~/.config/khal;
+    ln -s ${PWD}/khard ~/.config/khard;
     ln -s ${PWD}/vdirsyncer ~/.config/vdirsyncer;
     ln -s ${PWD}/neomutt ~/.config/neomutt;
     ln -s ${PWD}/msmtp ~/.config/msmtp;
