@@ -21,9 +21,9 @@ exec 											wal -R
 
 include "$HOME/.cache/wal/colors-sway"
 
-client.focused 									$color1 	$background 	$foreground 	$color7 		$color7
+client.focused 									$color1 	$background 	$foreground 	$color1 		$color1
 client.unfocused 								$color1 	$background 	$foreground 	$background 	$background
-client.focused_inactive 						$color1 	$background 	$foreground 	$color4 		$color4
+client.focused_inactive 						$color1 	$background 	$foreground 	$background 	$background
 client.urgent 									$color1 	$background 	$foreground 	$color3 		$color3
 
 
