@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 LIST=$(khal list now | sed -n 2p | sed 's/ ::.*//')
 

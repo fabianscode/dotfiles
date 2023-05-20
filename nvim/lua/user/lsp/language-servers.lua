@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "sd", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	buf_set_keymap("n", "<F6>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
+	buf_set_keymap("n", "<F7>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 	buf_set_keymap("n", "sf", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 end
 

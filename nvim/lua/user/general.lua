@@ -18,4 +18,10 @@ vim.cmd [[
 	set tabstop=4
 	set shiftwidth=4
 	set mouse=
+
+	highlight Cursor guifg=white guibg=white
+	highlight iCursor guifg=white guibg=white
+
+	au VimEnter * set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-iCursor
 ]]
+

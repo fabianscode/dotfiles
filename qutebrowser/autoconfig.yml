@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  qt.highdpi:
-    global: true
+  content.geolocation:
+    https://www.lieferando.de: false

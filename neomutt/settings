@@ -26,3 +26,11 @@ set sidebar_next_new_wrap = yes
 set sidebar_short_path = yes
 
 set query_command="khard email --parsable '%s'"
+
+set crypt_use_gpgme=yes
+set crypt_autosign=yes
+set crypt_verify_sig=yes
+set crypt_replysign=yes
+set crypt_replyencrypt=yes
+set crypt_replysignencrypted=yes
+#set crypt_autoencrypt = yes

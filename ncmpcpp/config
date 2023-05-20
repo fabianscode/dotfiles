@@ -1,32 +1,49 @@
 mpd_music_dir = "~/music"
 mpd_host = "localhost"
 mpd_port = "6600"
-
-lyrics_fetchers = azlyrics, metrolyrics, musixmatch, genius, sing365, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
-message_delay_time = "1"
-visualizer_type = "spectrum"
-song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
-song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
-song_library_format = {%n - }{%t}|{%f}
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
-alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-current_item_prefix = $(cyan)$r$b
-current_item_suffix = $/r$(end)$/b
-current_item_inactive_column_prefix = $(magenta)$r
-current_item_inactive_column_suffix = $/r$(end)
-playlist_display_mode = columns
-browser_display_mode = columns
-progressbar_look = ->
-media_library_primary_tag = album_artist
-media_library_albums_split_by_date = no
-startup_screen = "media_library"
-display_volume_level = no
-ignore_leading_the = yes
 external_editor = nvim
-use_console_editor = yes
-empty_tag_color = magenta
-main_window_color = white
-progressbar_color = black:b
-progressbar_elapsed_color = blue:b
-statusbar_color = red
-statusbar_time_color = cyan:b
+
+system_encoding = "utf-8"
+
+#playlist_display_mode = "classic"
+#song_list_format = "$1  $2%A$8 - $8%t $R $3%l  "
+## song_list_format = "$6{%a »$4 %t$/r$R}|{%f}"
+#
+#message_delay_time = "2"
+#
+#media_library_primary_tag = album_artist
+#media_library_hide_album_dates = yes
+#
+#playlist_disable_highlight_delay = 2
+#playlist_shorten_total_times = "yes"
+#playlist_editor_display_mode = "columns"
+#
+#browser_display_mode = "columns"
+#search_engine_display_mode = "columns"
+#autocenter_mode = "yes"
+#mouse_support = "yes"
+#centered_cursor = "yes"
+#follow_now_playing_lyrics = "yes"
+#display_bitrate = "no"
+#progressbar_elapsed_color = "white"
+#progressbar_color = "black"
+#
+## progressbar_look = "──"
+#progressbar_look = "━━"
+#
+#statusbar_color = "white"
+#
+#enable_window_title = "yes"
+#
+#now_playing_prefix = "$b$1"
+#now_playing_suffix = "$8$/b"
+#
+#song_status_format = "$b$7♫ $2%A $8- $3%b $8- $8%t "
+#song_window_title_format = " {%A} - {%t}"
+#song_columns_list_format = "(6)[]{} (23)[cyan]{a} (26)[white]{t|f} (40)[green]{b} (4)[blue]{l}"
+#
+#visualizer_look = "  "           # First we make the visualizer invisible
+#startup_screen = "visualizer"      # Next we make the left pane open on the empty visualizer
+#startup_slave_screen = "playlist"  # The right pane is the usual playlist view
+#startup_slave_screen_focus = "yes" # We focus the right pane on ncmpcpp startup
+#locked_screen_width_part = "50"    # We make the empty pane occupy 30% width, just like the cover art

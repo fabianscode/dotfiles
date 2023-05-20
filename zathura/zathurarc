@@ -55,6 +55,6 @@ set recolor-darkcolor           "#f8f8f2" # Foreground
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 
-set font "TerminessTTF Nerd Font 11"
+set font "Terminess Nerd Font 11"
 set adjust-open "best-fit"
 set adjust_window width

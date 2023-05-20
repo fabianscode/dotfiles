@@ -1,0 +1,22 @@
+# vim: filetype=muttrc
+
+unmailboxes *
+
+set mbox_type 		= Maildir
+set folder 			= "~/.local/share/mail/f.specht@tum.de"
+
+set sendmail 		= "msmtp -a f.specht@tum.de"
+
+set spoolfile		= "+INBOX"
+set record 			= "+Sent"
+set trash 			= "+Trash"
+set postponed 		= "+Drafts"
+
+set realname 		= "Fabian Specht"
+set from 			= "f.specht@tum.de"
+
+set signature		= "~/.config/neomutt/signature"
+
+mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
+
+macro index S "<shell-escape>mbsync -V f.specht@tum.de<enter><shell-escape>notmuch new<enter>" "sync email"

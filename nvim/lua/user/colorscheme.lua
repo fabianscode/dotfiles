@@ -7,6 +7,7 @@
 
 -- for normal use
 
-vim.cmd [[
-	colorscheme wal
-]]
+-- vim.cmd [[
+-- 	colorscheme wal
+-- ]]
+

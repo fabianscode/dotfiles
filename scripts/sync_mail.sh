@@ -46,3 +46,17 @@ else
 	echo "No new mail for github@fabianspecht.xyz"
 fi
 
+
+count_uni_before=$(find $HOME/.local/share/mail/f.specht@tum.de/INBOX/new/ -type f | wc -l)
+
+mbsync f.specht@tum.de
+
+count_uni_after=$(find $HOME/.local/share/mail/f.specht@tum.de/INBOX/new/ -type f | wc -l)
+
+if [ $count_uni_after -ne $count_uni_before ]
+then
+	notify-send "New mail for f.specht@tum.de!"
+else 
+	echo "No new mail for f.specht@tum.de"
+fi
+

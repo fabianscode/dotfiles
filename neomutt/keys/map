@@ -79,7 +79,7 @@ bind index,pager F forward-message
 # Compose screen options
 bind compose y send-message
 bind compose a attach-file
-bind compose p postpone-message
+bind compose p pgp-menu
 bind compose e edit-message
 bind compose t edit-to
 bind compose f edit-from
@@ -119,3 +119,4 @@ set abort_key = "<Esc>"
 macro index,pager i1 '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/main<enter><change-folder>!<enter>;<check-stats>' "switch to main"
 macro index,pager i2 '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/junk<enter><change-folder>!<enter>;<check-stats>' "switch to junk"
 macro index,pager i3 '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/github<enter><change-folder>!<enter>;<check-stats>' "switch to github"
+macro index,pager i4 '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/uni<enter><change-folder>!<enter>;<check-stats>' "switch to uni"

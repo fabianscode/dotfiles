@@ -74,3 +74,29 @@ SyncState *
 MaxMessages 0
 ExpireUnread no
 # End profile
+
+
+IMAPStore f.specht@tum.de-remote
+Host xmail.mwn.de
+Port 993
+User ge32sat
+PassCmd "cat ~/random/f.specht@tum.de"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore f.specht@tum.de-local
+Subfolders Verbatim
+Path /home/fabian/.local/share/mail/f.specht@tum.de/
+Inbox /home/fabian/.local/share/mail/f.specht@tum.de/INBOX
+
+Channel f.specht@tum.de
+Expunge Both
+Far :f.specht@tum.de-remote:
+Near :f.specht@tum.de-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile

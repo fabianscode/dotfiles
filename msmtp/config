@@ -38,3 +38,17 @@ tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile /home/fabian/.cache/msmtp/msmtp.log
 tls_starttls off
+
+
+account f.specht@tum.de
+host postout.lrz.de
+port 465
+from f.specht@tum.de
+user f.specht@tum.de
+passwordeval "pass show uni/f.specht@tum.de"
+
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fabian/.cache/msmtp/msmtp.log
+tls_starttls off

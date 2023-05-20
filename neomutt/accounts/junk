@@ -19,15 +19,6 @@ mailboxes 			=INBOX =Sent =Trash =Drafts =Junk
 
 macro index S "<shell-escape>mbsync -V dieter@fabianspecht.xyz<enter>" "sync email"
 
-set crypt_use_gpgme=yes
-set crypt_autosign=yes
-set crypt_verify_sig=yes
-set crypt_replysign=yes
-set crypt_replyencrypt=yes
-set crypt_replysignencrypted=yes
-set crypt_autoencrypt = yes
-
-
 set pgp_default_key="F152938FF4F2DB5B6673925136CBE8AC6C8BF1AF"
 set pgp_check_gpg_decrypt_status_fd
 set pgp_use_gpg_agent = yes
