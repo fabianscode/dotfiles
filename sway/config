@@ -39,8 +39,20 @@ input type:touchpad {
 	tap 										enabled
 }
 
+input 1386:891:Wacom_One_by_Wacom_M_Pen {
+	#map_to_output DP-2
+	left_handed enabled
+}
+
 output * background 							$wallpaper fill
-output * 										scale 1.6
+
+output eDP-1 {
+	scale 1.6
+}
+
+output DP-2 {
+	scale 1.15
+}
 
 
 mouse_warping 									none
@@ -58,9 +70,9 @@ bindsym XF86AudioRaiseVolume 					exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume 					exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute 							exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym XF86AudioPlay 							exec playerctl play-pause
-bindsym XF86AudioNext 							exec playerctl next
-bindsym XF86AudioPrev 							exec playerctl previous
+bindsym XF86AudioPlay 							exec mpc toggle
+bindsym XF86AudioNext 							exec mpc next
+bindsym XF86AudioPrev 							exec mpc prev
 
 bindswitch --reload --locked lid:on 			exec $lockman
 
