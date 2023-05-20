@@ -33,8 +33,9 @@ export PATH="$PATH:/home/fabian/.cargo/bin"
 
 [[ ! -r /home/fabian/.opam/opam-init/init.zsh ]] || source /home/fabian/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-export LC_ALL=de_DE.UTF-8
-export LANG=de_DE.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TIME=de_DE.UTF-8
 
 
 # vi mode
@@ -62,7 +63,7 @@ CASE_SENSITIVE="true"
 
 # (changed) from: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/afowler.zsh-theme
 
-PROMPT='%b%F{red}%3~%F{red} #%f%b '
+PROMPT='%b%F{red}%3~%F{red} $%f%b '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
