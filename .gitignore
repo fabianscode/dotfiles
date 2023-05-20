@@ -3,4 +3,5 @@
 /.ccls-cache
 error.log
 plugin/
-qsettings
+QtProject.conf
+autoconfig.yml
