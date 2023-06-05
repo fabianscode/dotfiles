@@ -17,6 +17,7 @@ set $lockman 									exec bash ~/.config/sway/lockman.sh
 # autostart
 exec 											wal -R
 exec 											mako
+exec 											wl-paste --watch cliphist store
 
 include $HOME/.cache/wal/colors-sway
 
@@ -64,6 +65,7 @@ bindsym Control+Shift+l 						exec $lockman
 
 bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
 bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
+bindsym $mod+Shift+b 							exec cliphist list | dmenu -l 10 | cliphist decode | wl-copy
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec alacritty --hold -e ikhal
