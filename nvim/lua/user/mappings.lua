@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 
+
 vim.keymap.set("i", "jj", "<ESC>")
 vim.keymap.set("n", "L", "o<ESC>")
 
@@ -38,6 +39,11 @@ vim.keymap.set("n", "<C-j>", ":lua require(\"harpoon.ui\").nav_file(2)<CR>", opt
 vim.keymap.set("n", "<C-k>", ":lua require(\"harpoon.ui\").nav_file(3)<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":lua require(\"harpoon.ui\").nav_file(4)<CR>", opts)
 
+vim.keymap.set("i", "<C-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+vim.keymap.set("s", "<C-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+vim.keymap.set("i", "<C-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+vim.keymap.set("s", "<C-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+
 -- show diffs in current branch
 vim.keymap.set("n", "<leader>dg", ":DiffviewFileHistory <CR>", opts)
 
@@ -49,6 +55,9 @@ vim.keymap.set("n", "<leader><leader>d", ":colorscheme wal | set background=dark
 vim.keymap.set("n", "<leader><leader>e", ":cd ~/.config/nvim <CR>", opts)
 
 
-vim.keymap.set("n", "gd", ":Glance definitions<CR>", opts)
-vim.keymap.set("n", "gr", ":Glance references<CR>", opts)
-vim.keymap.set("n", "gi", ":Glance implementations<CR>", opts)
+vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
+vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
+vim.keymap.set("n", "ga", ":lua vim.lsp.buf.code_action()<CR>", opts)
+vim.keymap.set("n", "gf", ":lua vim.lsp.buf.format()<CR>", opts)
+
