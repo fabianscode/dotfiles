@@ -1,7 +1,7 @@
 #!/bin/sh
 
 swayidle \
-    timeout 20 'swaymsg "output * dpms off"' \
+    timeout 30 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
 
 swaylock \
@@ -16,7 +16,7 @@ swaylock \
     --bs-hl-color 61afefcc \
     --caps-lock-bs-hl-color 458588cc \
     --caps-lock-key-hl-color d3869bcc \
-    --font "TerminessTTF Nerd Font" \
+    --font "Terminess Nerd Font" \
     --font-size 40 \
     --indicator-idle-visible \
     --indicator-radius 100 \
