@@ -3,16 +3,10 @@ vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("i", "jj", "<ESC>")
-vim.keymap.set("n", "L", "o<ESC>")
+vim.keymap.set("i", "jj", "GO TO HELL!")
 
-vim.keymap.set("n", "J", "}")
-vim.keymap.set("n", "K", "{")
-vim.keymap.set("v", "J", "}")
-vim.keymap.set("v", "K", "{")
-
-vim.keymap.set("n", "<C-d>", "<C-d>z.")
-vim.keymap.set("n", "<C-u>", "<C-u>z.")
+--vim.keymap.set("n", "<C-d>", "<C-d>z.")
+--vim.keymap.set("n", "<C-u>", "<C-u>z.")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -41,14 +35,5 @@ vim.keymap.set("n", "<C-l>", ":lua require(\"harpoon.ui\").nav_file(4)<CR>", opt
 -- show diffs in current branch
 vim.keymap.set("n", "<leader>dg", ":DiffviewFileHistory <CR>", opts)
 
--- change colortheme
-vim.keymap.set("n", "<leader><leader>l", ":colorscheme gruvbox | set background=light <CR>", opts)
-vim.keymap.set("n", "<leader><leader>d", ":colorscheme wal | set background=dark <CR>", opts)
-
 -- open common files quickly
 vim.keymap.set("n", "<leader><leader>e", ":cd ~/.config/nvim <CR>", opts)
-
-
-vim.keymap.set("n", "gd", ":Glance definitions<CR>", opts)
-vim.keymap.set("n", "gr", ":Glance references<CR>", opts)
-vim.keymap.set("n", "gi", ":Glance implementations<CR>", opts)
