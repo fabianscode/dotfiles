@@ -15,23 +15,23 @@ set $lockman 									exec bash ~/.config/sway/lockman.sh
 
 
 # autostart
-exec 											alacritty && sway '[app_id="alacritty"]' move container to workspace 1
-exec 											mako && ~/.config/mako/update-theme.sh
 exec 											wal -R
+exec 											mako
+exec 											wl-paste --watch cliphist store
 
-include "$HOME/.cache/wal/colors-sway"
+include $HOME/.cache/wal/colors-sway
 
 client.focused 									$color1 	$background 	$foreground 	$color1 		$color1
 client.unfocused 								$color1 	$background 	$foreground 	$background 	$background
 client.focused_inactive 						$color1 	$background 	$foreground 	$background 	$background
 client.urgent 									$color1 	$background 	$foreground 	$color3 		$color3
 
+include $HOME/.config/sway/specific/chosen_profile
 
 input type:keyboard {
     xkb_layout 									"de"
 	xkb_options 								caps:ctrl_modifier
 }
-
 
 input type:touchpad {
 	natural_scroll 								enabled
@@ -51,17 +51,8 @@ input 1386:884:Wacom_Intuos_S_Pen {
 
 output * background 							$wallpaper fill
 
-output eDP-1 {
-	scale 1.6
-}
-
-output DP-2 {
-	scale 1.15
-}
-
-
-mouse_warping 									none
-focus_follows_mouse 							no
+focus_follows_mouse 							yes
+mouse_warping 									container
 
 gaps inner 										10
 
@@ -79,9 +70,7 @@ bindsym XF86AudioPlay 							exec mpc toggle
 bindsym XF86AudioNext 							exec mpc next
 bindsym XF86AudioPrev 							exec mpc prev
 
-bindswitch --reload --locked lid:on 			exec $lockman
-
-bindsym $mod+m 									exec wl-mirror -r '0,0 1327x884'
+bindsym F3 exec ~/.local/bin/download_music
 
 bindsym $mod+p 									exec $scnshot
 bindsym $mod+Control+p 							exec $scnshot-edit
@@ -92,6 +81,7 @@ bindsym Control+Shift+l 						exec $lockman
 
 bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
 bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
+bindsym $mod+Shift+b 							exec cliphist list | dmenu -l 10 | cliphist decode | wl-copy
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec alacritty --hold -e ikhal
@@ -144,7 +134,6 @@ bindsym $mod+Shift+space 						floating toggle
 bindsym $mod+space 								focus mode_toggle
 bindsym $mod+Shift+n							exec ~/documents/dotfiles/scripts/random_wal.sh
 
-
 mode "resize" {
     bindsym $left 								resize shrink width 10px
     bindsym $down 								resize grow height 10px
@@ -155,9 +144,7 @@ mode "resize" {
     bindsym Escape 								mode "default"
 }
 
-
 bindsym $mod+r 									mode "resize"
-
 
 bar {
     swaybar_command 							waybar
