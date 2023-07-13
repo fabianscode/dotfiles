@@ -2,6 +2,7 @@
 .ccls-cache
 /.ccls-cache
 error.log
+chosen_profile
 plugin/
 QtProject.conf
 autoconfig.yml

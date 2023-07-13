@@ -82,7 +82,6 @@ function replace_multiple_dots() {
 zle -N replace_multiple_dots
 bindkey "." replace_multiple_dots
 
-
 # start sway by default
 if [ "$(tty)" = "/dev/tty1" ] ; then
     export QT_QPA_PLATFORM=wayland

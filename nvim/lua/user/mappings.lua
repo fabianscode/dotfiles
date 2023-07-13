@@ -3,17 +3,12 @@ vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 
+vim.keymap.set("i", "jj", "GO TO HELL!")
 
-vim.keymap.set("i", "jj", "<ESC>")
 vim.keymap.set("n", "L", "o<ESC>")
 
-vim.keymap.set("n", "J", "}")
-vim.keymap.set("n", "K", "{")
-vim.keymap.set("v", "J", "}")
-vim.keymap.set("v", "K", "{")
-
-vim.keymap.set("n", "<C-d>", "<C-d>z.")
-vim.keymap.set("n", "<C-u>", "<C-u>z.")
+--vim.keymap.set("n", "<C-d>", "<C-d>z.")
+--vim.keymap.set("n", "<C-u>", "<C-u>z.")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -47,10 +42,6 @@ vim.keymap.set("s", "<C-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 -- show diffs in current branch
 vim.keymap.set("n", "<leader>dg", ":DiffviewFileHistory <CR>", opts)
 
--- change colortheme
-vim.keymap.set("n", "<leader><leader>l", ":colorscheme gruvbox | set background=light <CR>", opts)
-vim.keymap.set("n", "<leader><leader>d", ":colorscheme wal | set background=dark <CR>", opts)
-
 -- open common files quickly
 vim.keymap.set("n", "<leader><leader>e", ":cd ~/.config/nvim <CR>", opts)
 
@@ -60,4 +51,3 @@ vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
 vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 vim.keymap.set("n", "ga", ":lua vim.lsp.buf.code_action()<CR>", opts)
 vim.keymap.set("n", "gf", ":lua vim.lsp.buf.format()<CR>", opts)
-

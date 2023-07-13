@@ -26,11 +26,27 @@ client.unfocused 								$color1 	$background 	$foreground 	$background 	$backgr
 client.focused_inactive 						$color1 	$background 	$foreground 	$background 	$background
 client.urgent 									$color1 	$background 	$foreground 	$color3 		$color3
 
-include $HOME/.config/sway/specific/desktop
+include $HOME/.config/sway/specific/chosen_profile
 
 input type:keyboard {
     xkb_layout 									"de"
 	xkb_options 								caps:ctrl_modifier
+}
+
+input type:touchpad {
+	natural_scroll 								enabled
+	scroll_factor 								0.6
+	tap 										enabled
+}
+
+input 1386:891:Wacom_One_by_Wacom_M_Pen {
+	map_to_output DP-2
+	left_handed enabled
+}
+
+input 1386:884:Wacom_Intuos_S_Pen {
+	map_to_output DP-2
+	left_handed enabled
 }
 
 output * background 							$wallpaper fill
