@@ -21,6 +21,8 @@ c.tabs.new_position.unrelated = "next"
 c.tabs.min_width = 150
 c.tabs.position = "bottom"
 
+c.content.notifications.enabled = False
+
 c.statusbar.position = "top"
 
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
