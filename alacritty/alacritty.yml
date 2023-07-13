@@ -27,10 +27,10 @@ cursor:
 
 font:
   normal:
-    family: TerminessTTF Nerd Font
+    family: Terminess Nerd Font
     style: Regular
 
-  size: 11
+  size: 12
 
 live_config_reload: true
 
