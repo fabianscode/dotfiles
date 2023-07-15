@@ -28,7 +28,7 @@ c.statusbar.position = "top"
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/downloads"
 
-font = "11pt TerminessTTF Nerd Font"
+font = "11pt Terminess Nerd Font"
 
 c.hints.border = font
 c.fonts.hints = font

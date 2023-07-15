@@ -14,4 +14,4 @@ map p print
 
 set selection-clipboard clipboard
 
-set font "TerminessTTF Nerd Font 11"
+set font "Terminess Nerd Font 11"

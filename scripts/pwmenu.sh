@@ -12,3 +12,6 @@ PW=`pass show "$PASS" | { read -r pass; printf %s "$pass"; }`
 
 wl-copy $PW
 wtype $PW
+
+sleep 20
+cliphist delete-query "$PW"

@@ -32,7 +32,6 @@ export PATH="$PATH:/home/fabian/.local/bin"
 export PATH="$PATH:/home/fabian/.cargo/bin"
 
 # opam configuration
-
 [[ ! -r /home/fabian/.opam/opam-init/init.zsh ]] || source /home/fabian/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 export LC_ALL=en_US.UTF-8

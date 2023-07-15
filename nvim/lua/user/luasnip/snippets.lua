@@ -16,6 +16,25 @@ luasnip.add_snippets(nil, {
 			insert(1, "statement"),
 			text({ "", "}" })
 		}),
+		snip({
+			trig = "entry",
+			namr = "new entry",
+			dscr = "create new entry"
+		}, {
+			insert(1, "XY"),
+			text({ "/" }),
+			insert(2, "2023"),
+			text({ "-0" }),
+			insert(3, "M"),
+			text({ "-" }),
+			insert(4, "DD"),
+			text({ ": ", "" }),
+			text({ "Frage: ", "" }),
+			insert(5, "<Frage>"),
+			text({ "", "", "" }),
+			text({ "Antwort: ", "" }),
+			insert(6, "<Antwort>"),
+		}),
 	},
 	c = {
 	    snip({
@@ -36,7 +55,7 @@ luasnip.add_snippets(nil, {
 			text({ "if (" }),
 			insert(6, "name"),
 			text({ " == NULL) {", "    " }),
-			text({ "printf(\"Out of memory\\n\");", "" }),
+			text({ "fprintf(stderr, \"Out of memory\\n\");", "" }),
 			text({ "}", "", "" }),
 			insert(7, "statement"),
 			text({ "", "", "" }),
