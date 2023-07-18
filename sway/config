@@ -13,6 +13,7 @@ set $scnshot 									grim -g "$(slurp -d)" - | wl-copy
 set $scnshot-edit 								grim -g "$(slurp -d)" - | swappy -f -
 set $lockman 									exec bash ~/.config/sway/lockman.sh
 
+bindsym $mod+m 									exec wl-mirror -r '0,0 1327x884'
 
 # autostart
 exec 											wal -R

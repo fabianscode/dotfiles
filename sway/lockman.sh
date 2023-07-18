@@ -41,7 +41,7 @@ swaylock \
     --text-caps-lock-color fbf1c7 \
     --text-ver-color fbf1c7 \
     --text-wrong-color fbf1c7 \
-    --effect-blur 2x8 \
+    --effect-blur 8x8 \
     --effect-vignette 0.5:0.5
 
 kill %%
