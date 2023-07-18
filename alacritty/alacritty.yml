@@ -30,7 +30,7 @@ font:
     family: Terminess Nerd Font
     style: Regular
 
-  size: 12
+  size: 11
 
 live_config_reload: true
 
