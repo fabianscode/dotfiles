@@ -95,6 +95,8 @@ bind compose <return> view-attach
 
 bind attach,compose | pipe-entry
 
+bind key_select_pgp <return> select-entry
+
 
 # Commands and Misc
 bind index,pager $ sync-mailbox # more like a refresh than a sync
