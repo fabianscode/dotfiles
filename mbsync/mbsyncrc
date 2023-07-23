@@ -50,32 +50,6 @@ ExpireUnread no
 # End profile
 
 
-IMAPStore github@fabianspecht.xyz-remote
-Host mail.fabianspecht.xyz
-Port 993
-User github@fabianspecht.xyz
-PassCmd "cat ~/random/github@fabianspecht.xyz"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore github@fabianspecht.xyz-local
-Subfolders Verbatim
-Path /home/fabian/.local/share/mail/github@fabianspecht.xyz/
-Inbox /home/fabian/.local/share/mail/github@fabianspecht.xyz/INBOX
-
-Channel github@fabianspecht.xyz
-Expunge Both
-Far :github@fabianspecht.xyz-remote:
-Near :github@fabianspecht.xyz-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 0
-ExpireUnread no
-# End profile
-
-
 IMAPStore git@fabianspecht.xyz-remote
 Host mail.fabianspecht.xyz
 Port 993

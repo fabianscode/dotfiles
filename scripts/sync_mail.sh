@@ -33,20 +33,6 @@ else
 fi
 
 
-count_github_before=$(find $HOME/.local/share/mail/github@fabianspecht.xyz/INBOX/new/ -type f | wc -l)
-
-mbsync github@fabianspecht.xyz
-
-count_github_after=$(find $HOME/.local/share/mail/github@fabianspecht.xyz/INBOX/new/ -type f | wc -l)
-
-if [ $count_github_after -ne $count_github_before ]
-then
-	notify-send "New mail for github@fabianspecht.xyz!"
-else 
-	echo "No new mail for github@fabianspecht.xyz"
-fi
-
-
 count_git_before=$(find $HOME/.local/share/mail/git@fabianspecht.xyz/INBOX/new/ -type f | wc -l)
 
 mbsync git@fabianspecht.xyz
