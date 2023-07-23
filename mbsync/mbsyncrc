@@ -76,6 +76,32 @@ ExpireUnread no
 # End profile
 
 
+IMAPStore git@fabianspecht.xyz-remote
+Host mail.fabianspecht.xyz
+Port 993
+User git@fabianspecht.xyz
+PassCmd "cat ~/random/git@fabianspecht.xyz"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore git@fabianspecht.xyz-local
+Subfolders Verbatim
+Path /home/fabian/.local/share/mail/git@fabianspecht.xyz/
+Inbox /home/fabian/.local/share/mail/git@fabianspecht.xyz/INBOX
+
+Channel git@fabianspecht.xyz
+Expunge Both
+Far :git@fabianspecht.xyz-remote:
+Near :git@fabianspecht.xyz-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
 IMAPStore f.specht@tum.de-remote
 Host xmail.mwn.de
 Port 993

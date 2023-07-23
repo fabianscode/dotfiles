@@ -13,8 +13,6 @@ set $scnshot 									grim -g "$(slurp -d)" - | wl-copy
 set $scnshot-edit 								grim -g "$(slurp -d)" - | swappy -f -
 set $lockman 									exec bash ~/.config/sway/lockman.sh
 
-bindsym $mod+m 									exec wl-mirror -r '0,0 1327x884'
-
 # autostart
 exec 											wal -R
 exec 											mako
@@ -38,16 +36,6 @@ input type:touchpad {
 	natural_scroll 								enabled
 	scroll_factor 								0.6
 	tap 										enabled
-}
-
-input 1386:891:Wacom_One_by_Wacom_M_Pen {
-	map_to_output DP-2
-	left_handed enabled
-}
-
-input 1386:884:Wacom_Intuos_S_Pen {
-	map_to_output DP-2
-	left_handed enabled
 }
 
 output * background 							$wallpaper fill
@@ -82,7 +70,7 @@ bindsym Control+Shift+l 						exec $lockman
 
 bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
 bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
-bindsym $mod+Shift+b 							exec cliphist list | dmenu -l 10 | cliphist decode | wl-copy
+bindsym $mod+Shift+b 							exec cliphist list | dmenu-wl -l 10 | cliphist decode | wl-copy
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec alacritty --hold -e ikhal

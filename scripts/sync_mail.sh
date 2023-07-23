@@ -47,6 +47,20 @@ else
 fi
 
 
+count_git_before=$(find $HOME/.local/share/mail/git@fabianspecht.xyz/INBOX/new/ -type f | wc -l)
+
+mbsync git@fabianspecht.xyz
+
+count_git_after=$(find $HOME/.local/share/mail/git@fabianspecht.xyz/INBOX/new/ -type f | wc -l)
+
+if [ $count_git_after -ne $count_git_before ]
+then
+	notify-send "New mail for git@fabianspecht.xyz!"
+else 
+	echo "No new mail for git@fabianspecht.xyz"
+fi
+
+
 count_uni_before=$(find $HOME/.local/share/mail/f.specht@tum.de/INBOX/new/ -type f | wc -l)
 
 mbsync f.specht@tum.de

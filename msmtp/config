@@ -40,6 +40,20 @@ logfile /home/fabian/.cache/msmtp/msmtp.log
 tls_starttls off
 
 
+account git@fabianspecht.xyz
+host mail.fabianspecht.xyz
+port 465
+from git@fabianspecht.xyz
+user git@fabianspecht.xyz
+passwordeval "pass show pers/git@fabianspecht.xyz"
+
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fabian/.cache/msmtp/msmtp.log
+tls_starttls off
+
+
 account f.specht@tum.de
 host postout.lrz.de
 port 465

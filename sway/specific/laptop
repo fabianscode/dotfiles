@@ -13,3 +13,9 @@ input type:touchpad {
 }
 
 bindswitch --reload --locked lid:on 			exec $lockman
+bindsym $mod+m 									exec wl-mirror -r '0,0 1327x884'
+
+input 1386:891:Wacom_One_by_Wacom_M_Pen {
+	map_to_output DP-2
+	left_handed enabled
+}
