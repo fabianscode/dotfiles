@@ -1,5 +1,5 @@
 #!/bin/sh
 
-FILE=$(find ~/documents/dotfiles/wallpapers/ | shuf -n 1)
+FILE=$(find ~/pictures/wallpapers/ | shuf -n 1)
 
 wal -i $FILE
