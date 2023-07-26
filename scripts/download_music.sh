@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR="/home/fabian/music/"
-DIR+=$(ls ~/music | dmenu)
+DIR+=$(ls ~/music | dmenu-wl)
 
 #URL=$(xclip -selection clipboard -o)
 URL=$(wl-paste)
