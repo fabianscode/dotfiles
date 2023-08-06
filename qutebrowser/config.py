@@ -1,4 +1,4 @@
-import pywalQute.draw
+# import pywalQute.draw
 
 # removing errors below
 config = config
@@ -46,12 +46,19 @@ config.bind('X', 'hint links spawn mpv {hint-url}', mode='normal')
 config.bind('<Ctrl-V>', 'mode-leave', mode='passthrough')
 config.bind('<Esc>', 'mode-leave', mode='passthrough')
 
-pywalQute.draw.color(c, {
-    'spacing': {
-        'vertical': 1,
-        'horizontal': 1
-    }
-})
+# pywalQute.draw.color(c, {
+#     'spacing': {
+#         'vertical': 1,
+#         'horizontal': 1
+#     }
+# })
 
 c.tabs.indicator.width = 4
 c.tabs.favicons.scale = 1
+
+c.colors.completion.category.bg = "#333333"
+c.colors.completion.even.bg = "#444444"
+c.colors.completion.odd.bg = "#444444"
+
+c.colors.completion.category.border.bottom = "#000000"
+c.colors.completion.category.border.top = "#000000"
