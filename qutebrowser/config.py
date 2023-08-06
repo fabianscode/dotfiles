@@ -23,7 +23,7 @@ c.tabs.position = "bottom"
 
 c.content.notifications.enabled = False
 
-c.statusbar.position = "top"
+c.statusbar.position = "bottom"
 
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/downloads"
@@ -45,13 +45,6 @@ config.bind('<Ctrl-j>', 'tab-next', mode='command')
 config.bind('X', 'hint links spawn mpv {hint-url}', mode='normal')
 config.bind('<Ctrl-V>', 'mode-leave', mode='passthrough')
 config.bind('<Esc>', 'mode-leave', mode='passthrough')
-
-# pywalQute.draw.color(c, {
-#     'spacing': {
-#         'vertical': 1,
-#         'horizontal': 1
-#     }
-# })
 
 c.tabs.indicator.width = 4
 c.tabs.favicons.scale = 1
