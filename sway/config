@@ -45,8 +45,8 @@ mouse_warping 									container
 
 gaps inner 										10
 
-default_border pixel 							2
-default_floating_border pixel 					2
+default_border pixel 							4
+default_floating_border pixel 					4
 
 bindsym XF86MonBrightnessUp 					exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown 					exec --no-startup-id brightnessctl set 5%-
