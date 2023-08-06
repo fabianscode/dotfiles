@@ -22,6 +22,6 @@ vim.cmd [[
 	highlight Cursor guifg=white guibg=white
 	highlight iCursor guifg=white guibg=white
 
-	au VimEnter * set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-iCursor
+	au VimEnter * set guicursor=i-n-v-c:block-Cursor,ci-ve:ver25-iCursor
 ]]
 
