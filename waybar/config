@@ -1,8 +1,8 @@
 {
 	"height": 18, 
 	"modules-left": ["sway/workspaces", "sway/mode"],
-	"modules-center": [],
-	"modules-right": ["custom/mail", "pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
+	"modules-center": ["mpd"],
+	"modules-right": ["custom/khal", "custom/mail", "pulseaudio", "network","custom/nmvpn", "backlight", "battery", "custom/clock"],
 
 	"sway/mode": {
 		"format": "<span style=\"italic\">{}</span>"
@@ -59,8 +59,16 @@
 		},
 		"on-click": "pavucontrol",
 	},
+	"mpd": {
+		"format": "{artist} - {title} {elapsedTime:%M:%S}",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
+		"interval": 2,
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)"
+	},
 	"custom/khal": {
-		"exec": "LIST=$(khal list now | sed -n 2p | sed 's/ ::.*//'); echo ${LIST//[^[:ascii:][öäüÖÄÜß]/}",
+		"exec": "~/documents/dotfiles/polybar/khal.sh",
 		"on-click": "alacritty --hold -e ikhal",
 		"interval": 60,
 	},
