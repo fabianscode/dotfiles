@@ -70,10 +70,10 @@ bindsym Control+Shift+l 						exec $lockman
 
 bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
 bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
-bindsym $mod+Shift+b 							exec cliphist list | dmenu-wl -l 10 | cliphist decode | wl-copy
+bindsym $mod+Shift+b 							exec cliphist list | dmenu-wl -p Clipboard -i -l 10 -fn "Terminess Nerd Font" -h 26 | cliphist decode | wl-copy
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
-bindsym $mod+Shift+i 							exec alacritty --hold -e ikhal
+bindsym $mod+Shift+i 							exec networkmanager_dmenu -l 20 -h 26 -i -fn "Terminess Nerd Font"
 bindsym $mod+Shift+w 							exec alacritty --hold -e curl wttr.in
 
 bindsym $mod+q 									kill

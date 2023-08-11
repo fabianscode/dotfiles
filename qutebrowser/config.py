@@ -23,7 +23,7 @@ c.tabs.position = "bottom"
 
 c.content.notifications.enabled = False
 
-c.statusbar.position = "bottom"
+c.statusbar.position = "top"
 
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 c.downloads.location.directory = "~/downloads"
