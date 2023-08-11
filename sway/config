@@ -75,6 +75,7 @@ bindsym $mod+Shift+b 							exec cliphist list | dmenu-wl -p CLP -i -l 10 -fn "T
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec networkmanager_dmenu -l 20 -h 26 -i -fn "Terminess Nerd Font"
 bindsym $mod+Shift+u 							exec dmenu-bluetooth -l 10 -h 26 -i -fn "Terminess Nerd Font" -p BLT
+bindsym $mod+Shift+z 							exec audio_dmenu
 bindsym $mod+Shift+w 							exec alacritty --hold -e curl wttr.in
 
 bindsym $mod+q 									kill
