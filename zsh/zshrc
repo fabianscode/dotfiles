@@ -42,6 +42,8 @@ export LC_TIME=de_DE.UTF-8
 # vi mode
 source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+ZVM_CURSOR_STYLE_ENABLED=false
+
 # autocompletion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
