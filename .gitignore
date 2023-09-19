@@ -6,3 +6,4 @@ chosen_profile
 plugin/
 QtProject.conf
 autoconfig.yml
+otr/
