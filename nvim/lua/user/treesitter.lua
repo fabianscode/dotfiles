@@ -24,7 +24,7 @@ require("nvim-treesitter.configs").setup {
 
 --from https://github.com/nvim-treesitter/nvim-treesitter-context#screenshot
 require "treesitter-context".setup {
-	enable = true,
+	enable = false,
 	max_lines = 0,
 	trim_scope = "outer",
 	min_window_height = 0,

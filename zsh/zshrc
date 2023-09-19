@@ -4,6 +4,7 @@ HISTSIZE=10000
 SAVEHIST=1000
 
 alias scim="sc-im"
+alias sv="fzf | xargs nvim"
 
 # set colortheme
 #(cat ~/.cache/wal/sequences &)

@@ -6,7 +6,7 @@ set $up 										k
 set $right 										l
 
 set $term 										foot
-set $menu 										dmenu_path | dmenu-wl_run | xargs swaymsg
+set $menu 										dmenu_path | dmenu-wl_run -l 10 -h 26 -p "Open" -fn "Terminess Nerd Font" -i | xargs swaymsg
 set $browser 									qutebrowser
 
 set $scnshot 									grim -g "$(slurp -d)" - | wl-copy
@@ -18,14 +18,14 @@ exec 											wal -R
 exec 											mako
 exec 											wl-paste --watch cliphist store
 
+
+include $HOME/.config/sway/specific/chosen_profile
 include $HOME/.cache/wal/colors-sway
 
 # client.focused 									$color1 	$background 	$foreground 	$color1 		$color1
 # client.unfocused 								$color1 	$background 	$foreground 	$background 	$background
 # client.focused_inactive 						$color1 	$background 	$foreground 	$background 	$background
 # client.urgent 									$color1 	$background 	$foreground 	$color3 		$color3
-
-include $HOME/.config/sway/specific/chosen_profile
 
 input type:keyboard {
     xkb_layout 									"de"
@@ -70,13 +70,17 @@ bindsym Control+Shift+l 						exec $lockman
 
 bindsym $mod+Shift+p 							exec ~/documents/dotfiles/scripts/pwmenu.sh
 bindsym $mod+Shift+o 							exec ~/documents/dotfiles/scripts/otpmenu.sh
+bindsym $mod+Shift+t 							exec ~/documents/dotfiles/scripts/mount.sh
+bindsym $mod+Shift+r 							exec ~/documents/dotfiles/scripts/unmount.sh
+bindsym $mod+Shift+e 							exec =
+bindsym $mod+Shift+w 							exec ~/documents/dotfiles/scripts/emoji.sh
+bindsym $mod+Shift+y 							exec ~/documents/dotfiles/scripts/yt-dmenu.sh
 bindsym $mod+Shift+b 							exec cliphist list | dmenu-wl -p CLP -i -l 10 -fn "Terminess Nerd Font" -h 26 | cliphist decode | wl-copy
 
 bindsym $mod+Shift+m 							exec alacritty --hold -e neomutt
 bindsym $mod+Shift+i 							exec networkmanager_dmenu -l 20 -h 26 -i -fn "Terminess Nerd Font"
 bindsym $mod+Shift+u 							exec dmenu-bluetooth -l 10 -h 26 -i -fn "Terminess Nerd Font" -p BLT
 bindsym $mod+Shift+z 							exec audio_dmenu
-bindsym $mod+Shift+w 							exec alacritty --hold -e curl wttr.in
 
 bindsym $mod+q 									kill
 bindsym $mod+Shift+c 							reload
@@ -124,6 +128,18 @@ bindsym $mod+f 									fullscreen
 bindsym $mod+Shift+space 						floating toggle
 bindsym $mod+space 								focus mode_toggle
 bindsym $mod+Shift+n							exec ~/documents/dotfiles/scripts/random_wal.sh
+
+for_window {
+	[title="OpenSSH Authentication Passphrase request"] {
+		floating enable
+	}
+}
+
+for_window {
+	[app_id="mount"] {
+		floating enable
+	}
+}
 
 mode "resize" {
     bindsym $left 								resize shrink width 10px

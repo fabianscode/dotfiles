@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR="/home/fabian/music/"
-DIR+=$(ls ~/music | dmenu-wl)
+DIR+=$(ls ~/music | dmenu-wl -p "Choose dir" -i -l 10 -fn "Terminess Nerd Font" -h 26)
 
 #URL=$(xclip -selection clipboard -o)
 URL=$(wl-paste)

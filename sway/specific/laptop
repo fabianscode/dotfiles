@@ -12,7 +12,8 @@ input type:touchpad {
 	tap 										enabled
 }
 
-bindswitch --reload --locked lid:on 			exec $lockman
+bindswitch --reload --locked lid:on 			exec ~/.config/sway/lockman.sh
+
 bindsym $mod+m 									exec wl-mirror -r '0,0 1327x884'
 
 input 1386:891:Wacom_One_by_Wacom_M_Pen {

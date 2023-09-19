@@ -4,8 +4,10 @@ swayidle \
     timeout 30 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
 
-swaylock \
-	--color 000000ff
+waylock -init-color 0x000000
+
+##swaylock \
+##	--color 000000ff
 #    --ignore-empty-password \
 #	 --screenshots \
 #    --daemonize \
